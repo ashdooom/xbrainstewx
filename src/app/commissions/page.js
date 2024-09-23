@@ -25,7 +25,7 @@ export default function Programming() {
     e.preventDefault();
 
     try {
-      const response = await fetch('/api/contact/route.js', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
