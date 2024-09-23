@@ -19,6 +19,7 @@ export default function Programming() {
                 <Link href="/art" className={styles.linkArt}>art portfolio</Link>
                 <Link href="/commissions" className={styles.linkArt}>commissions</Link>
                 <Link href="/about" className={styles.linkArt}>about</Link>
+                <Link href="/comments" className={styles.linkArt}>comments</Link>
             </div>
             <div className={styles.artText}>
                 <p>

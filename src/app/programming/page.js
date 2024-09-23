@@ -16,6 +16,7 @@ export default function Programming() {
         <Link href="/art" className={styles.linkProg}>art portfolio</Link>
         <Link href="/commissions" className={styles.linkProg}>commissions</Link>
         <Link href="/about" className={styles.linkProg}>about</Link>
+        <Link href="/comments" className={styles.linkProg}>comments</Link>
       </div>
       <div>
         <Image src={mewwoumb} className={styles.umb} />

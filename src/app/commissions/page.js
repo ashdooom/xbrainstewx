@@ -14,7 +14,7 @@ export default function Programming() {
     projectDetails: '',
   });
 
-  const [statusMessage, setStatusMessage] = useState(null); 
+  const [statusMessage, setStatusMessage] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -59,6 +59,7 @@ export default function Programming() {
         <Link href="/art" className={styles.linkComm}>art portfolio</Link>
         <Link href="/commissions" className={styles.linkComm}>commissions</Link>
         <Link href="/about" className={styles.linkComm}>about</Link>
+        <Link href="/comments" className={styles.linkComm}>comments</Link>
       </div>
       <div>
         <Image src={gloomy2} className={styles.gloomy2} />

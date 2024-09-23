@@ -14,9 +14,10 @@ export default function Home() {
       </Link>
       <div className={styles.linksContainer}>
         <Link href="/programming" className={styles.link}>programming portfolio</Link>
-        <Link href="/art" className={styles.link}>art portfolio</Link>  {/* Example placeholder route */}
-        <Link href="/commissions" className={styles.link}>commissions</Link>  {/* Example placeholder route */}
-        <Link href="/about" className={styles.link}>about</Link>  {/* Example placeholder route */}
+        <Link href="/art" className={styles.link}>art portfolio</Link>  
+        <Link href="/commissions" className={styles.link}>commissions</Link>  
+        <Link href="/about" className={styles.link}>about</Link>  
+        <Link href="/comments" className={styles.link}>comments</Link>
       </div>
       <div className={styles.bubbles}>
         <Image src={bubbles} alt="Bubbles" />
