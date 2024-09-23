@@ -107,11 +107,16 @@
 .commentForm {
   display: flex;
   flex-direction: column; 
-  align-items: center; /* Centers the textarea and button horizontally */
+  align-items: center;
   margin-top: 20px;
   width: 100%;
-  max-width: 500px; /* Set a maximum width for the form */
-  margin: 0 auto; /* Centers the form container itself */
+  max-width: 500px; 
+  margin: 0 auto; 
+}
+
+
+.name {
+  margin: 3vh;
 }
 
 .textarea {
@@ -565,6 +570,7 @@
   height: 50vh;
   width: 40vh;
 }
+
 
 }
 

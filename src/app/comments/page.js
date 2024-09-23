@@ -64,6 +64,10 @@ export default function Programming() {
         <Image src={mewwobow} className={styles.mewwoBow} />
       </div>
       <form className={styles.commentForm} onSubmit={handleSubmit}>
+        <input
+            placeholder="name"
+            className={styles.name}
+            />
         <textarea
           placeholder="add a comment"
           value={newComment}
