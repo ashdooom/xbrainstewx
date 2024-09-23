@@ -1,0 +1,115 @@
+{
+  "unknown": {
+    "versionSfCore": null,
+    "versionFramework": "4.4.0",
+    "isWithinCompose": false,
+    "composeOrgName": null,
+    "composeServiceName": null,
+    "command": [],
+    "options": {},
+    "error": null,
+    "machineId": "8ceb2077b34f963557030b5d4eb54b63",
+    "serviceProviderAwsCfStackId": null,
+    "serviceProviderAwsCfStackCreated": null,
+    "serviceProviderAwsCfStackUpdated": null,
+    "serviceProviderAwsCfStackStatus": null,
+    "serviceProviderAwsCfStackOutputs": null
+  },
+  "/Users/ashleycorona/Desktop/bwainsteww/brainxstew5.0/xbrainstewx": {
+    "versionSfCore": null,
+    "versionFramework": "4.4.0",
+    "isWithinCompose": false,
+    "isCompose": false,
+    "composeOrgName": null,
+    "composeResolverProviders": {
+      "default-aws-credential-resolver": "<REDACTED>"
+    },
+    "composeServiceName": null,
+    "servicePath": "/Users/ashleycorona/Desktop/bwainsteww/brainxstew5.0/xbrainstewx",
+    "serviceConfigFileName": "serverless.yml",
+    "service": {
+      "org": "xbrainstewx",
+      "app": "brainstew",
+      "service": "xbrainstewx",
+      "provider": {
+        "name": "aws",
+        "runtime": "nodejs14.x",
+        "region": "us-east-2",
+        "stage": "dev",
+        "versionFunctions": true
+      },
+      "functions": {
+        "api": {
+          "handler": "handler.api",
+          "events": [
+            {
+              "http": {
+                "path": "/",
+                "method": "get"
+              }
+            },
+            {
+              "http": {
+                "path": "{proxy+}",
+                "method": "any"
+              }
+            }
+          ]
+        }
+      },
+      "plugins": [
+        "serverless-nextjs-plugin"
+      ]
+    },
+    "serviceRawFile": "# \"org\" ensures this Service is used with the correct Serverless Framework Access Key.\norg: xbrainstewx\n# \"app\" enables Serverless Framework Dashboard features and sharing them with other Services.\napp: brainstew\nservice: xbrainstewx\n\nprovider:\n  name: aws\n  runtime: nodejs14.x\n  region: us-east-2 \nfunctions:\n  api:\n    handler: handler.api\n    events:\n      - http:\n          path: /\n          method: get\n      - http:\n          path: '{proxy+}'\n          method: any\n\nplugins:\n  - serverless-nextjs-plugin\n",
+    "command": [
+      "deploy"
+    ],
+    "options": {
+      "debug": "*"
+    },
+    "error": {
+      "message": "Cannot find module 'next/dist/next-server/server/config'\nRequire stack:\n- /Users/ashleycorona/Desktop/bwainsteww/brainxstew5.0/xbrainstewx/node_modules/serverless-nextjs-plugin/lib/parseNextConfiguration.js\n- /Users/ashleycorona/Desktop/bwainsteww/brainxstew5.0/xbrainstewx/node_modules/serverless-nextjs-plugin/index.js",
+      "stack": "Error: Cannot find module 'next/dist/next-server/server/config'\nRequire stack:\n- /Users/ashleycorona/Desktop/bwainsteww/brainxstew5.0/xbrainstewx/node_modules/serverless-nextjs-plugin/lib/parseNextConfiguration.js\n- /Users/ashleycorona/Desktop/bwainsteww/brainxstew5.0/xbrainstewx/node_modules/serverless-nextjs-plugin/index.js\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1219:15)\n    at Module._load (node:internal/modules/cjs/loader:1045:27)\n    at TracingChannel.traceSync (node:diagnostics_channel:315:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:215:24)\n    at Module.require (node:internal/modules/cjs/loader:1304:12)\n    at require (node:internal/modules/helpers:123:16)\n    at Object.<anonymous> (/Users/ashleycorona/Desktop/bwainsteww/brainxstew5.0/xbrainstewx/node_modules/serverless-nextjs-plugin/lib/parseNextConfiguration.js:11:20)\n    at Module._compile (node:internal/modules/cjs/loader:1467:14)\n    at Module._extensions..js (node:internal/modules/cjs/loader:1551:10)\n    at Module.load (node:internal/modules/cjs/loader:1282:32)",
+      "code": "MODULE_NOT_FOUND"
+    },
+    "params": {},
+    "machineId": "8ceb2077b34f963557030b5d4eb54b63",
+    "stage": "dev",
+    "accessKeyV2": "<REDACTED>",
+    "accessKeyV1": "<REDACTED>",
+    "orgId": "772ee3da-de69-4623-971d-0aa82640d47e",
+    "orgName": "xbrainstewx",
+    "userId": "qqBdLQ2wpJHVjlr18r",
+    "dashboard": {
+      "isEnabledForService": true,
+      "requiredAuthentication": false,
+      "orgFeaturesInUse": {
+        "providers": true,
+        "monitoring": false
+      },
+      "orgObservabilityIntegrations": null,
+      "serviceAppId": "MQXR9jKktw6YwL8X6d",
+      "serviceProvider": {
+        "accessKeyId": "<REDACTED>",
+        "secretAccessKey": "<REDACTED>",
+        "sessionToken": "<REDACTED>"
+      },
+      "instanceParameters": null
+    },
+    "userName": "xbrainstewx",
+    "subscription": null,
+    "userEmail": "ashleeglasss@gmail.com",
+    "serviceProviderAwsRegion": "us-east-2",
+    "serviceProviderAwsCredentials": "<REDACTED>",
+    "serviceProviderAwsAccountId": "533266986246",
+    "projectType": "traditional",
+    "versionSf": "4.4.0",
+    "serviceUniqueId": null,
+    "serviceProviderAwsCfStackId": null,
+    "serviceProviderAwsCfStackCreated": null,
+    "serviceProviderAwsCfStackUpdated": null,
+    "serviceProviderAwsCfStackStatus": null,
+    "serviceProviderAwsCfStackOutputs": null
+  }
+}

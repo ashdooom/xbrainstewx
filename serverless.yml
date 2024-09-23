@@ -1,0 +1,23 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: xbrainstewx
+# "app" enables Serverless Framework Dashboard features and sharing them with other Services.
+app: brainstew
+service: xbrainstewx
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: us-east-2 
+functions:
+  api:
+    handler: handler.api
+    events:
+      - http:
+          path: /
+          method: get
+      - http:
+          path: '{proxy+}'
+          method: any
+
+plugins:
+  - serverless-nextjs-plugin
