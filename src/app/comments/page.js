@@ -12,7 +12,7 @@ import mewwobow from '/public/images/mewwobow.gif';
 export default function Comments() {
     const [comments, setComments] = useState([]);
     const [newComment, setNewComment] = useState("");
-    const [name, setName] = useState(""); // State for name
+    const [name, setName] = useState(""); 
 
     useEffect(() => {
         const q = query(collection(db, 'comments'), orderBy('timestamp', 'desc'));
@@ -38,12 +38,12 @@ export default function Comments() {
         try {
             await addDoc(collection(db, "comments"), {
                 text: newComment,
-                name: name,  // Include the name
+                name: name, 
                 timestamp: serverTimestamp(),
             });
 
             setNewComment("");
-            setName("");  // Clear the name input after submission
+            setName("");  
         } catch (error) {
             console.error("Error adding comment: ", error);
         }
@@ -55,11 +55,11 @@ export default function Comments() {
                 <Image src={xbrainstewx} className={styles.brain} alt="xbrainstewx logo" />
             </Link>
             <div className={styles.linksContainer}>
-                <Link href="/programming" className={styles.linkComments}>programming portfolio</Link>
-                <Link href="/art" className={styles.linkComments}>art portfolio</Link>
-                <Link href="/commissions" className={styles.linkComments}>commissions</Link>
-                <Link href="/about" className={styles.linkComments}>about</Link>
-                <Link href="/comments" className={styles.linkComments}>comments</Link>
+                <Link href="/programming" className={styles.links}>programming portfolio</Link>
+                <Link href="/art" className={styles.links}>art portfolio</Link>
+                <Link href="/commissions" className={styles.links}>commissions</Link>
+                <Link href="/about" className={styles.links}>about</Link>
+                <Link href="/comments" className={styles.links}>comments</Link>
             </div>
             <div>
                 <p>leave a comment below</p>

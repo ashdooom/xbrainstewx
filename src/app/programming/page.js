@@ -12,11 +12,11 @@ export default function Programming() {
         <Image src={xbrainstewx} className={styles.brain} />
       </Link>
       <div className={styles.linksContainer}>
-        <Link href="/programming" className={styles.linkProg}>programming portfolio</Link>
-        <Link href="/art" className={styles.linkProg}>art portfolio</Link>
-        <Link href="/commissions" className={styles.linkProg}>commissions</Link>
-        <Link href="/about" className={styles.linkProg}>about</Link>
-        <Link href="/comments" className={styles.linkProg}>comments</Link>
+        <Link href="/programming" className={styles.links}>programming portfolio</Link>
+        <Link href="/art" className={styles.links}>art portfolio</Link>
+        <Link href="/commissions" className={styles.links}>commissions</Link>
+        <Link href="/about" className={styles.links}>about</Link>
+        <Link href="/comments" className={styles.links}>comments</Link>
       </div>
       <div>
         <Image src={mewwoumb} className={styles.umb} />

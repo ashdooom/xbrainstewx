@@ -55,16 +55,16 @@ export default function Programming() {
         <Image src={xbrainstewx} className={styles.brain} />
       </Link>
       <div className={styles.linksContainer}>
-        <Link href="/programming" className={styles.linkComm}>programming portfolio</Link>
-        <Link href="/art" className={styles.linkComm}>art portfolio</Link>
-        <Link href="/commissions" className={styles.linkComm}>commissions</Link>
-        <Link href="/about" className={styles.linkComm}>about</Link>
-        <Link href="/comments" className={styles.linkComm}>comments</Link>
+        <Link href="/programming" className={styles.links}>programming portfolio</Link>
+        <Link href="/art" className={styles.links}>art portfolio</Link>
+        <Link href="/commissions" className={styles.links}>commissions</Link>
+        <Link href="/about" className={styles.links}>about</Link>
+        <Link href="/comments" className={styles.links}>comments</Link>
       </div>
       <div>
         <Image src={gloomy2} className={styles.gloomy2} />
       </div>
-      <div>
+      <div className={styles.commForm}>
         <p className={styles.commForm}>
           Fill out this form for a website or art commission
         </p>

@@ -60,7 +60,6 @@
 .brain {
   width: 120vh;
   height: 55vh;
-  margin-top: 20vh;
 }
 
 .gif {
@@ -72,31 +71,23 @@
   gap: 16px;
   justify-content: center;
   align-items: center;
+  margin-top: -10vh;
+  color: #93f400;
+  margin: 4vh;
 }
 
-.link {
-  display: inline-block;
+.links {
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 8px;
   transition: background-color 0.3s ease;
   color: #93f400;
   margin-top: -1vh;
-}
-
-.linkProg {
-  display: inline-block;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-  color: #93f400;
-  margin-top: 13vh;
+  margin: 2vh;
 }
 
 .linkComments {
   margin-top: 26.5vh;
-  display: inline-block;
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 8px;
@@ -172,17 +163,7 @@
   text-align: right;
 }
 
-.link:hover {
-  background-color: var(--button-secondary-hover);
-  color: #ffa6fc;
-}
-
-.linkProg:hover {
-  background-color: var(--button-secondary-hover);
-  color: #ffa6fc;
-}
-
-.linkComments:hover {
+.links:hover {
   background-color: var(--button-secondary-hover);
   color: #ffa6fc;
 }
@@ -241,7 +222,7 @@
   height: 50vh;
   width: 30vh;
   position: absolute;
-  left: 15vh;
+  left: 5vh;
   margin-top: -15vh;
 }
 
@@ -251,33 +232,6 @@
   position: absolute;
   right: 50%;
   left: 42%
-}
-
-.linkAbout {
-  display: inline-block;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-  color: #93f400;
-  margin-top: 26.5vh;
-}
-
-.linkAbout:hover,
-.linkArt:hover,
-.linkComm:hover {
-  background-color: var(--button-secondary-hover);
-  color: #ffa6fc;
-}
-
-.linkArt {
-  display: inline-block;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-  color: #93f400;
-  margin-top: 26.5vh;
 }
 
 .about {
@@ -321,29 +275,16 @@
 }
 
 
-
-.linkComm {
-  display: inline-block;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-  color: #93f400;
-  margin-top: 26.5vh;
-
-}
-
 .commForm {
   text-decoration: none;
   transition: background-color 0.3s ease;
   color: #ffffff;
-  margin-top: 26.5vh;
   text-align: center;
 }
 
 .gloomy2 {
-  position: absolute;
-  right: 43%;
+  position: relative;
+
 }
 
 
@@ -388,7 +329,7 @@
   top: 80%
 }
 
-@media (max-width: 740px) {
+@media (max-width: 1110px) {
   .page {
     padding: 32px;
     padding-bottom: 80px;
@@ -398,17 +339,6 @@
     align-items: center;
     min-height: 100vh;
   }
-
-  .brain {
-    width: 52vh;
-    height: 30vh;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-  }
-
-
 
   .music {
     display: flex;
@@ -423,47 +353,21 @@
   }
 
   .linksContainer {
-    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
   }
 
-  .link {
+  .links {
     display: inline-block;
     text-decoration: none;
     transition: background-color 0.3s ease;
     color: greenyellow;
-    margin: 1vh;
+    margin: 2.5vh;
+    flex-direction: column;
   }
 
-  .linkProg {
-    padding: 5vh;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-    color: #93f400;
-    margin: 1vh;
-    padding: 1vh;
-  }
-
-  .linkAbout {
-    margin: 1vh;
-  }
-
-  .linkArt,
-  .linkComm {
-    display: inline-block;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-    color: #93f400;
-    margin-top: -10vh;
-    margin: 1vh;
-  }
-
-  .link:hover {
+  .links:hover {
     background-color: var(--button-secondary-hover);
   }
 
@@ -528,7 +432,6 @@
 
   .gloomy2 {
     position: relative;
-    left: 5%;
   }
 
 
@@ -563,16 +466,6 @@
     margin-bottom: 10vh;
   }
 
-  .linkComments {
-    display: inline-block;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-    color: #93f400;
-    margin: 1vh;
-  }
-
   .mewwoBow {
     height: 50vh;
     width: 40vh;
@@ -587,11 +480,8 @@
   }
 }
 
-@media (max-width: 900px) {
-  .brain {
-    width: 63vh;
-    height: 40vh;
-  }
+@media (max-width: 2368px) {
+
 
   .umb {
     height: 40vh;
@@ -613,24 +503,20 @@
     padding-top: 40vh;
   }
 
-    .linkProg {
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background-color 0.3s ease;
-      color: #93f400;
-      margin: 5vh auto;
-      display: block;
-      position: relative;
-      margin-top: 2vh;
-    }
 
-    .clouds {
-      position: relative;
-      top: 90%;
-      margin-right: 28vh;
-      margin-top: 5vh;
-    }
+
+  .clouds {
+    position: relative;
+    top: 90%;
+    margin-right: 28vh;
+    margin-top: 5vh;
+  }
+
+  .linksContainer {
+    position: relative;
+    display: inline;
+    margin-top: 30vh;
+  }
 }
 
 @media (max-width: 2500px) {
@@ -638,8 +524,8 @@
   .page {
     display: flex;
     flex-direction: column;
-    justify-content: center; 
-    align-items: center;      
+    justify-content: center;
+    align-items: center;
     text-align: center;
   }
 
@@ -647,48 +533,38 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center; 
-    align-items: center; 
-    margin-left: -10vh;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-right: 65vh;
   }
-  
+
   .brain {
     width: 58vh;
     height: 40vh;
-    margin-top: -15vh;
   }
-  
+
   .umb {
     height: 40vh;
     width: 30vh;
-    display: block;
-    margin: 0 auto;       
+    position: absolute;
   }
-  
+
   .code {
     color: #93f400;
-    font-size: 3vh;
-    margin: 5vh 0;       
+    font-size: 2vh;
+    margin: 5vh 0;
     margin-top: -25vh;
   }
-  
-  .linkProg {
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-    color: #93f400;
-    display: block;    
-    margin-top: 26.5vh;
-  }
-  
+
   .clouds {
     margin-top: 5vh;
-    margin-bottom: 5vh;  
+    margin-bottom: 5vh;
   }
 
   .linksContainer {
-    margin-top: -30vh;
+    margin-top: -40vh;
+    display: inline;
   }
 
   .about {
@@ -701,41 +577,57 @@
     margin-bottom: -50vh;
   }
 
-  .gloomy2 {
-    left: 35%
-  }
-  
+
 }
 
 @media (max-width: 2500px) {
 
   .brain {
-    width: 80vh;
-  }
-
-  .linkProg {
-    margin-top: 26.5vh;
-  }
-
-  .code {
-    margin-top: 10vh;
+    width: 100vh;
   }
 
   .umb {
-    margin-top: 80vh;
+    position: relative;
+    margin-top: -5vh;
+    margin-bottom: -20vh;
   }
 
   .gloomy2 {
-    left: 40%;
     padding-bottom: 2vh;
   }
 
   .selfie {
-    left: 45%;
+    left: 35%;
   }
 
-  .link {
-    margin-top: 26.8vh;
+  .about {
+    margin-top: -40vh;
   }
 
+
+  .clouds {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 25vh;
+  }
+
+  .linksContainer {
+    display: inline;
+    margin-top: -8vh;
+  }
+}
+
+
+@media (max-width: 1200px) {
+  .linksContainer {
+    display: inline-block;
+    margin: 5vh;
+  }
+
+  .brain {
+    width: 60vh;
+  }
 }
