@@ -106,12 +106,12 @@
 
 .commentForm {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: center;
   margin-top: 20px;
   width: 100%;
-  max-width: 500px; 
-  margin: 0 auto; 
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 
@@ -330,7 +330,7 @@
   transition: background-color 0.3s ease;
   color: #93f400;
   margin-top: 26.5vh;
-  
+
 }
 
 .commForm {
@@ -352,7 +352,7 @@
   transition: background-color 0.3s ease;
   color: #ffffff;
   text-align: center;
-  width: 100%; 
+  width: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -408,13 +408,13 @@
     flex-direction: column;
   }
 
-                                                                                           
-                              
+
+
   .music {
     display: flex;
     justify-content: center;
-    align-items: center;                        
-  }                          
+    align-items: center;
+  }
 
   .spotifyEmbed {
     border: none;
@@ -558,25 +558,25 @@
   }
 
 
-.gif {
-  margin-top: -30vh;
-  margin-bottom: 10vh;
-}
+  .gif {
+    margin-top: -30vh;
+    margin-bottom: 10vh;
+  }
 
-.linkComments {
-  display: inline-block;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-  color: #93f400;
-  margin: 1vh;
-}
+  .linkComments {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    color: #93f400;
+    margin: 1vh;
+  }
 
-.mewwoBow {
-  height: 50vh;
-  width: 40vh;
-}
+  .mewwoBow {
+    height: 50vh;
+    width: 40vh;
+  }
 
 
 }
@@ -585,4 +585,157 @@
   .logo {
     filter: invert();
   }
+}
+
+@media (max-width: 900px) {
+  .brain {
+    width: 63vh;
+    height: 40vh;
+  }
+
+  .umb {
+    height: 40vh;
+    width: 30vh;
+    position: relative;
+    left: 1%;
+    right: 10vh;
+    margin-top: 40vh;
+    margin-right: 5vh;
+    display: block;
+  }
+
+  .code {
+    color: #93f400;
+    text-align: center;
+    font-size: 2vh;
+    margin: 5vh auto;
+    position: relative;
+    padding-top: 40vh;
+  }
+
+    .linkProg {
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+      color: #93f400;
+      margin: 5vh auto;
+      display: block;
+      position: relative;
+      margin-top: 2vh;
+    }
+
+    .clouds {
+      position: relative;
+      top: 90%;
+      margin-right: 28vh;
+      margin-top: 5vh;
+    }
+}
+
+@media (max-width: 2500px) {
+
+  .page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;      
+    text-align: center;
+  }
+
+  .selfie {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    margin-left: -10vh;
+  }
+  
+  .brain {
+    width: 58vh;
+    height: 40vh;
+    margin-top: -15vh;
+  }
+  
+  .umb {
+    height: 40vh;
+    width: 30vh;
+    display: block;
+    margin: 0 auto;       
+  }
+  
+  .code {
+    color: #93f400;
+    font-size: 3vh;
+    margin: 5vh 0;       
+    margin-top: -25vh;
+  }
+  
+  .linkProg {
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    color: #93f400;
+    display: block;    
+    margin-top: 26.5vh;
+  }
+  
+  .clouds {
+    margin-top: 5vh;
+    margin-bottom: 5vh;  
+  }
+
+  .linksContainer {
+    margin-top: -30vh;
+  }
+
+  .about {
+    color: #93f400;
+    margin-top: 10vh;
+    font-size: 3vh;
+    text-align: center;
+    position: relative;
+    padding: 50vh;
+    margin-bottom: -50vh;
+  }
+
+  .gloomy2 {
+    left: 35%
+  }
+  
+}
+
+@media (max-width: 2500px) {
+
+  .brain {
+    width: 80vh;
+  }
+
+  .linkProg {
+    margin-top: 26.5vh;
+  }
+
+  .code {
+    margin-top: 10vh;
+  }
+
+  .umb {
+    margin-top: 80vh;
+  }
+
+  .gloomy2 {
+    left: 40%;
+    padding-bottom: 2vh;
+  }
+
+  .selfie {
+    left: 45%;
+  }
+
+  .link {
+    margin-top: 26.8vh;
+  }
+
 }
