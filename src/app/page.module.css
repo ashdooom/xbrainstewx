@@ -63,9 +63,9 @@
 }
 
 .gif {
-  height: 50vh;
+  height: 10vh;
   position: absolute;
-  margin-top: 100vh;
+  margin-top: 50vh;
 }
 
 .linksContainer {
@@ -370,8 +370,8 @@
   }
 
   .gif {
-    height: 100vh;
-    position: absolute;
+    position: relative;
+    margin-top: -10vh;
   }
 
   .bubbles {
