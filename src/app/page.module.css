@@ -63,7 +63,9 @@
 }
 
 .gif {
-  height: 00vh;
+  height: 50vh;
+  position: absolute;
+  margin-top: 100vh;
 }
 
 .linksContainer {
@@ -184,7 +186,6 @@
 
 .bubbles {
   width: 10vh;
-  margin-top: 35vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -319,9 +320,6 @@
   position: absolute;
 }
 
-.gif {
-  margin-top: -50vh;
-}
 
 .flower {
   position: relative;
@@ -372,8 +370,8 @@
   }
 
   .gif {
-    margin-top: -3vh;
-
+    height: 100vh;
+    position: absolute;
   }
 
   .bubbles {
@@ -460,17 +458,14 @@
     margin-top: -3vh;
   }
 
-
-  .gif {
-    margin-top: -30vh;
-    margin-bottom: 10vh;
-  }
-
   .mewwoBow {
     height: 50vh;
     width: 40vh;
   }
 
+  .mewwoo {
+    height: 50vh;
+  }
 
 }
 
@@ -517,6 +512,8 @@
     display: inline;
     margin-top: 30vh;
   }
+
+
 }
 
 @media (max-width: 2500px) {
@@ -577,6 +574,10 @@
     margin-bottom: -50vh;
   }
 
+  .mewwoo {
+
+    height: 50vh;
+  }
 
 }
 
@@ -618,6 +619,7 @@
     display: inline;
     margin-top: -8vh;
   }
+
 }
 
 
@@ -630,4 +632,7 @@
   .brain {
     width: 60vh;
   }
+
+
+
 }
