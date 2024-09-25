@@ -636,3 +636,9 @@
 
 
 }
+
+@media (max-width: 950px) { 
+  .brain {
+    width: 45vh;
+  }
+}
