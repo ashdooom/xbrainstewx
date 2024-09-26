@@ -13,6 +13,7 @@ export default function Comments() {
     const [comments, setComments] = useState([]);
     const [newComment, setNewComment] = useState("");
     const [name, setName] = useState(""); 
+    
 
     useEffect(() => {
         const q = query(collection(db, 'comments'), orderBy('timestamp', 'desc'));
@@ -28,6 +29,16 @@ export default function Comments() {
     }, []);
 
     const handleSubmit = async (e) => {
+
+        const response = await fetch('/api/email', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+          });
+          
+
         e.preventDefault();
 
         if (newComment.trim() === "" || name.trim() === "") {
@@ -48,6 +59,8 @@ export default function Comments() {
             console.error("Error adding comment: ", error);
         }
     };
+
+    
 
     return (
         <div className={styles.page}>
