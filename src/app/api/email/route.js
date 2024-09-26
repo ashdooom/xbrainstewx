@@ -2,7 +2,7 @@ export async function POST(request) {
     try {
       const { name, email, phoneNumber, projectDetails } = await request.json();
 
-      const docRef = await addDoc(collection(db, 'commissions'), {
+      const docRef = await addDoc(collection(db, 'commission-requests'), {
         name: name,
         email: email,
         phoneNumber: phoneNumber,
