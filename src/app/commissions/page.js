@@ -6,7 +6,7 @@ import Link from "next/link";
 import xbrainstewx from '/public/images/xbrainstewx.png';
 import gloomy2 from '/public/images/gloomy2.gif';
 
-export default function Programming() {
+export default function Commissions() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -23,16 +23,16 @@ export default function Programming() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('/api/email', {  
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
       });
-
+  
       if (response.ok) {
         setStatusMessage('thanks for your information and trust. i will get back to you as soon as possible.');
         setFormData({
@@ -48,7 +48,7 @@ export default function Programming() {
       setStatusMessage('Error submitting form: ' + error.message);
     }
   };
-
+  
   return (
     <div className={styles.page}>
       <Link href='/'>
@@ -66,7 +66,7 @@ export default function Programming() {
       </div>
       <div className={styles.commForm}>
         <p className={styles.commForm}>
-          Fill out this form for a website or art commission
+          fill out this form for a website or art commission
         </p>
       </div>
       <form onSubmit={handleSubmit}>

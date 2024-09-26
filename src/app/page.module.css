@@ -327,6 +327,18 @@
   top: 80%
 }
 
+.progAbout {
+  color:#ffa6fc;
+}
+
+.progAbout:hover {
+  color: #93f400;
+}
+
+.email {
+  color: #ffa6fc;
+}
+
 @media (max-width: 1110px) {
   .page {
     padding: 32px;
@@ -466,6 +478,8 @@
   .mewwoo {
     height: 50vh;
   }
+
+ 
 
 }
 
