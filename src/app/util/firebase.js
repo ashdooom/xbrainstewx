@@ -13,10 +13,9 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-
-
 const db = getFirestore(app);
 
+// Analytics is optional; wrap it in isSupported
 isSupported().then((supported) => {
   if (supported) {
     const analytics = getAnalytics(app);

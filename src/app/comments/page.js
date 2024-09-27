@@ -22,43 +22,35 @@ export default function Comments() {
                 id: doc.id,
                 ...doc.data(),
             }));
+            console.log("Fetched comments:", commentsArray); // Debugging line
             setComments(commentsArray);
         });
-
+    
         return () => unsubscribe();
     }, []);
-
+    
     const handleSubmit = async (e) => {
-
-        const response = await fetch('/api/email', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData),
-          });
-          
-
         e.preventDefault();
-
+    
         if (newComment.trim() === "" || name.trim() === "") {
             alert("Comment and name cannot be empty");
             return;
         }
-
+    
         try {
             await addDoc(collection(db, "comments"), {
                 text: newComment,
                 name: name, 
                 timestamp: serverTimestamp(),
             });
-
+    
             setNewComment("");
             setName("");  
         } catch (error) {
             console.error("Error adding comment: ", error);
         }
     };
+    
 
     
 
@@ -102,7 +94,7 @@ export default function Comments() {
                 {comments.map(comment => (
                     <div key={comment.id} className={styles.comment}>
                         <h1>⊹₊⟡⋆</h1><p className={styles.commentText}><strong>{comment.name}:</strong></p> 
-                        <p className={styles.commentText}>{comment.text}</p> {/* Comment text */}
+                        <p className={styles.commentText}>{comment.text}</p>
                         <p className={styles.commentTimestamp}>
                             {comment.timestamp?.toDate().toLocaleString() || "Just now"}
                         </p>
