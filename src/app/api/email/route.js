@@ -9,6 +9,10 @@ export async function POST(request) {
   try {
     const { name, email, phoneNumber, projectDetails } = await request.json();
 
+    if (!name || !email || !phoneNumber || !projectDetails) {
+      return NextResponse.json({ message: 'All fields are required.' }, { status: 400 });
+    }
+
     const docRef = await addDoc(collection(db, 'commission-requests'), {
       name,
       email,
@@ -41,8 +45,10 @@ export async function POST(request) {
     });
 
     return NextResponse.json({ message: 'Emails sent and data stored successfully!' }, { status: 200 });
+    
   } catch (error) {
     console.error('Error sending emails or saving data:', error);
+
     return NextResponse.json({ message: 'Error handling request.' }, { status: 500 });
   }
 }
