@@ -24,32 +24,32 @@ export default function Commissions() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     try {
-      const response = await fetch('/api/email', {  
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-  
-      if (response.ok) {
-        setStatusMessage('thanks for your information and trust. i will get back to you as soon as possible.');
-        setFormData({
-          name: '',
-          email: '',
-          phoneNumber: '',
-          projectDetails: '',
+        const response = await fetch('/api/email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
         });
-      } else {
-        setStatusMessage('Submission failed: ' + response.statusText);
-      }
+
+        if (response.ok) {
+            setStatusMessage('thanks for your information and trust. i will get back to you as soon as possible.');
+            setFormData({
+                name: '',
+                email: '',
+                phoneNumber: '',
+                projectDetails: '',
+            });
+        } else {
+            setStatusMessage('Submission failed: ' + response.statusText);
+        }
     } catch (error) {
-      setStatusMessage('Error submitting form: ' + error.message);
+        setStatusMessage('Error submitting form: ' + error.message);
     }
-  };
-  
+};
+
   return (
     <div className={styles.page}>
       <Link href='/'>

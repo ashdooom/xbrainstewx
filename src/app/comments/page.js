@@ -22,12 +22,13 @@ export default function Comments() {
                 id: doc.id,
                 ...doc.data(),
             }));
-            console.log("Fetched comments:", commentsArray); // Debugging line
+            console.log("Fetched comments:", commentsArray); 
             setComments(commentsArray);
         });
     
         return () => unsubscribe();
     }, []);
+    
     
     const handleSubmit = async (e) => {
         e.preventDefault();
