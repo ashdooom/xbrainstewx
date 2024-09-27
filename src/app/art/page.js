@@ -8,7 +8,7 @@ import Slideshow from "@/components/Slideshow";
 import xbrainstewx from '/public/images/xbrainstewx.png';
 import kitty from '/public/images/kitty.gif';
 
-export default function Programming() {
+export default function Art() {
     return (
         <div className={styles.page}>
             <Link href='/'>
