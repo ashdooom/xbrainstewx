@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import sendgrid from '@sendgrid/mail';
-import { db } from '@/app/util/firebase'; 
+import { db } from '../util/firebase'; 
 import { collection, addDoc } from 'firebase/firestore'; 
 
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY); 

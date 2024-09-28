@@ -12,8 +12,7 @@ import mewwobow from '/public/images/mewwobow.gif';
 export default function Comments() {
     const [comments, setComments] = useState([]);
     const [newComment, setNewComment] = useState("");
-    const [name, setName] = useState(""); 
-    
+    const [name, setName] = useState("");
 
     useEffect(() => {
         const q = query(collection(db, 'comments'), orderBy('timestamp', 'desc'));
@@ -22,38 +21,38 @@ export default function Comments() {
                 id: doc.id,
                 ...doc.data(),
             }));
-            console.log("Fetched comments:", commentsArray); 
+            console.log(process.env.FIREBASE_PROJECT_ID);
+
             setComments(commentsArray);
+        }, (error) => {
+            console.error('Error loading comments:', error);
         });
-    
+
         return () => unsubscribe();
     }, []);
-    
-    
+
     const handleSubmit = async (e) => {
         e.preventDefault();
-    
+
         if (newComment.trim() === "" || name.trim() === "") {
             alert("Comment and name cannot be empty");
             return;
         }
-    
+
         try {
             await addDoc(collection(db, "comments"), {
                 text: newComment,
-                name: name, 
+                name: name,
                 timestamp: serverTimestamp(),
             });
-    
+
+
             setNewComment("");
-            setName("");  
+            setName("");
         } catch (error) {
             console.error("Error adding comment: ", error);
         }
     };
-    
-
-    
 
     return (
         <div className={styles.page}>
@@ -74,14 +73,12 @@ export default function Comments() {
                 <Image src={mewwobow} className={styles.mewwoBow} alt="mewwo bow gif" />
             </div>
             <form className={styles.commentForm} onSubmit={handleSubmit}>
-
                 <input
                     placeholder="name"
                     className={styles.name}
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                 />
-
                 <textarea
                     placeholder="add a comment"
                     value={newComment}
@@ -94,11 +91,13 @@ export default function Comments() {
             <div className={styles.commentsSection}>
                 {comments.map(comment => (
                     <div key={comment.id} className={styles.comment}>
-                        <h1>⊹₊⟡⋆</h1><p className={styles.commentText}><strong>{comment.name}:</strong></p> 
+                        <h1>⊹₊⟡⋆</h1>
+                        <p className={styles.commentText}><strong>{comment.name}:</strong></p>
                         <p className={styles.commentText}>{comment.text}</p>
                         <p className={styles.commentTimestamp}>
-                            {comment.timestamp?.toDate().toLocaleString() || "Just now"}
+                            {comment.timestamp?.toDate ? comment.timestamp.toDate().toLocaleString() : "Just now"}
                         </p>
+
                     </div>
                 ))}
             </div>
