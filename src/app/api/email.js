@@ -6,6 +6,7 @@ import { collection, addDoc } from 'firebase/firestore';
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY); 
 
 export async function POST(request) {
+    
   try {
     const { name, email, phoneNumber, projectDetails } = await request.json();
 
