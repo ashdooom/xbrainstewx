@@ -13,24 +13,25 @@ export default function Comments() {
     const [comments, setComments] = useState([]);
     const [newComment, setNewComment] = useState("");
     const [name, setName] = useState("");
-
+    
+    
     useEffect(() => {
         const q = query(collection(db, 'comments'), orderBy('timestamp', 'desc'));
         const unsubscribe = onSnapshot(q, (snapshot) => {
-            const commentsArray = snapshot.docs.map(doc => ({
-                id: doc.id,
-                ...doc.data(),
-            }));
-            console.log(process.env.FIREBASE_PROJECT_ID);
-
-            setComments(commentsArray);
+          const commentsArray = snapshot.docs.map(doc => ({
+            id: doc.id,
+            ...doc.data(),
+          }));
+          
+          console.log("Fetched comments:", commentsArray); 
+          setComments(commentsArray);
         }, (error) => {
-            console.error('Error loading comments:', error);
+          console.error('Error loading comments:', error);  
         });
-
+      
         return () => unsubscribe();
-    }, []);
-
+      }, []);
+      
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -49,7 +50,9 @@ export default function Comments() {
 
             setNewComment("");
             setName("");
-        } catch (error) {
+        }
+
+        catch (error) {
             console.error("Error adding comment: ", error);
         }
     };
@@ -97,6 +100,7 @@ export default function Comments() {
                         <p className={styles.commentTimestamp}>
                             {comment.timestamp?.toDate ? comment.timestamp.toDate().toLocaleString() : "Just now"}
                         </p>
+
 
                     </div>
                 ))}
