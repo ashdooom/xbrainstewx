@@ -13,25 +13,30 @@ export default function Comments() {
     const [comments, setComments] = useState([]);
     const [newComment, setNewComment] = useState("");
     const [name, setName] = useState("");
-    
-    
+
+
     useEffect(() => {
-        const q = query(collection(db, 'comments'), orderBy('timestamp', 'desc'));
-        const unsubscribe = onSnapshot(q, (snapshot) => {
-          const commentsArray = snapshot.docs.map(doc => ({
-            id: doc.id,
-            ...doc.data(),
-          }));
-          
-          console.log("Fetched comments:", commentsArray); 
-          setComments(commentsArray);
-        }, (error) => {
-          console.error('Error loading comments:', error);  
-        });
-      
-        return () => unsubscribe();
-      }, []);
-      
+        const fetchComments = async () => {
+            try {
+                const q = query(collection(db, 'comments'), orderBy('timestamp', 'desc'));
+                const unsubscribe = onSnapshot(q, (snapshot) => {
+                    const commentsArray = snapshot.docs.map(doc => ({
+                        id: doc.id,
+                        ...doc.data(),
+                    }));
+                    setComments(commentsArray);
+                });
+                return () => unsubscribe();
+            } catch (error) {
+                console.error('Error fetching comments:', error);
+            }
+        };
+
+        fetchComments();
+    }, []);
+
+
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -46,16 +51,13 @@ export default function Comments() {
                 name: name,
                 timestamp: serverTimestamp(),
             });
-
-
             setNewComment("");
             setName("");
-        }
-
-        catch (error) {
-            console.error("Error adding comment: ", error);
+        } catch (error) {
+            console.error('Error adding comment:', error);
         }
     };
+
 
     return (
         <div className={styles.page}>

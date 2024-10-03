@@ -2,5 +2,15 @@
   "firestore": {
     "rules": "firestore.rules",
     "indexes": "firestore.indexes.json"
+  },
+  "emulators": {
+    "firestore": {
+      "port": 3000
+    },
+    "ui": {
+      "enabled": true,
+      "port": 3001
+    },
+    "singleProjectMode": true
   }
 }
