@@ -26,7 +26,7 @@ export default function Commissions() {
     e.preventDefault();
 
     try {
-        const response = await fetch('/api/email', {
+        const response = await fetch('', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
