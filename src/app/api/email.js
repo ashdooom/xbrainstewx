@@ -7,12 +7,18 @@ sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
 
 export async function POST(request) {
   try {
+    console.log("Incoming POST request to /commissions");
+
     const { name, email, phoneNumber, projectDetails } = await request.json();
 
     if (!name || !email || !phoneNumber || !projectDetails) {
       return NextResponse.json({ message: 'All fields are required.' }, { status: 400 });
     }
 
+    // Log data to ensure it's being received
+    console.log("Data received:", { name, email, phoneNumber, projectDetails });
+
+    // Add the commission request to Firestore
     const docRef = await addDoc(collection(db, 'commission-requests'), {
       name,
       email,
@@ -25,30 +31,16 @@ export async function POST(request) {
       to: email,
       from: 'confirmation@xbrainstewx.com',
       templateId: 'd-776bf58e9dbf4461aa83cbcbdcff5de5',
-      dynamicTemplateData: {
-        name,
-        projectDetails,
-        phoneNumber,
-      },
+      dynamicTemplateData: { name, projectDetails, phoneNumber }
     });
 
-    await sendgrid.send({
-      to: 'ashley@xbrainstewx.com',
-      from: 'confirmation@xbrainstewx.com',
-      subject: 'New Commission Request',
-      html: `
-        <p>You have a new commission request from <strong>${name}</strong>.</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phoneNumber}</p>
-        <p><strong>Project Details:</strong> ${projectDetails}</p>
-      `,
-    });
+    console.log("Emails sent successfully");
 
     return NextResponse.json({ message: 'Emails sent and data stored successfully!' }, { status: 200 });
 
   } catch (error) {
-    console.error('Error sending emails or saving data:', error);
-
+    console.error("Error handling POST request:", error);
     return NextResponse.json({ message: 'Error handling request.' }, { status: 500 });
   }
 }
+
