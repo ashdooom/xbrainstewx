@@ -23,6 +23,9 @@ export default function Programming() {
       </div>
 
       <div className={styles.code}>
+      <div className={styles.github}>
+        <a href="https://www.github.com/ashdooom">☆ github ☆</a>
+      </div>
         I am a passionate web developer with a Full Stack Certification from Nucamp and with a strong foundation in both front-end and back-end technologies. My experience includes building responsive user interfaces and developing robust server-side applications. I enjoy tackling complex problems and continuously improving my skills to deliver high-quality software solutions.
         <br />
         ☆ Proficient in HTML, CSS, and JavaScript
@@ -41,12 +44,6 @@ export default function Programming() {
         <br />
         ☆ Excellent problem-solving abilities and attention to detail
         <br />
-      </div>
-      <div>
-        <Image src={clouds} className={styles.clouds} />
-      </div>
-      <div className={styles.github}>
-        <a href="https://www.github.com/ashdooom">☆ github ☆</a>
       </div>
     </div>
   );

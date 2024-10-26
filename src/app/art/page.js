@@ -7,6 +7,7 @@ import Link from "next/link";
 import Slideshow from "@/components/Slideshow";
 import xbrainstewx from '/public/images/xbrainstewx.png';
 import kitty from '/public/images/kitty.gif';
+import aboutart from '/public/images/aboutart.PNG';
 
 export default function Art() {
     return (
@@ -25,6 +26,9 @@ export default function Art() {
                 <p>
                     request a commission <Link href='/commissions'><p className={styles.here}>here</p></Link>
                 </p>
+            </div>
+            <div>
+                <Image className={styles.aboutArt} src={aboutart} />
             </div>
             <Slideshow />
             <div>

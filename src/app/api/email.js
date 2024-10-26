@@ -15,10 +15,8 @@ export async function POST(request) {
       return NextResponse.json({ message: 'All fields are required.' }, { status: 400 });
     }
 
-    // Log data to ensure it's being received
     console.log("Data received:", { name, email, phoneNumber, projectDetails });
 
-    // Add the commission request to Firestore
     const docRef = await addDoc(collection(db, 'commission-requests'), {
       name,
       email,

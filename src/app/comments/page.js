@@ -71,7 +71,7 @@ export default function Comments() {
                 <Link href="/about" className={styles.links}>about</Link>
                 <Link href="/comments" className={styles.links}>comments</Link>
             </div>
-            <div>
+            <div className={styles.commentBelow}>
                 <p>leave a comment below</p>
             </div>
             <div>
