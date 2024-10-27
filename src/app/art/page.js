@@ -5,9 +5,9 @@ import styles from "../page.module.css";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Slideshow from "@/components/Slideshow";
-import xbrainstewx from '/public/images/xbrainstewx.png';
-import kitty from '/public/images/kitty.gif';
-import aboutart from '/public/images/aboutart.PNG';
+import xbrainstewx from '/images/xbrainstewx.png';
+import kitty from '/images/kitty.gif';
+import aboutart from '/images/aboutart.PNG';
 
 export default function Art() {
     return (
