@@ -7,8 +7,8 @@ import { db } from "../util/firebase";
 import { collection, query, orderBy, onSnapshot, addDoc, serverTimestamp } from 'firebase/firestore';
 import Link from "next/link";
 import xbrainstewx from '/xbrainstewx.png';
-import mewwobow from '/mewwobow.gif';
-import girrr from '/girrr.gif';
+import mewwobow from '/public/mewwobow.gif';
+import girrr from '/public/girrr.gif';
 
 export default function Comments() {
     const [comments, setComments] = useState([]);
