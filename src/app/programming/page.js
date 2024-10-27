@@ -1,9 +1,8 @@
 import Image from "next/image";
 import styles from "../page.module.css";
 import Link from "next/link";
-import xbrainstewx from '/public/images/xbrainstewx.png';
-import mewwoumb from '/public/images/mewwoumb.gif';
-import clouds from '/public/images/clouds.gif';
+import xbrainstewx from '/images/xbrainstewx.png';
+import mewwoumb from '/images/mewwoumb.gif';
 
 export default function Programming() {
   return (

@@ -6,8 +6,8 @@ import { useState, useEffect } from "react";
 import { db } from "../util/firebase";
 import { collection, query, orderBy, onSnapshot, addDoc, serverTimestamp } from 'firebase/firestore';
 import Link from "next/link";
-import xbrainstewx from '/public/images/xbrainstewx.png';
-import mewwobow from '/public/images/mewwobow.gif';
+import xbrainstewx from '/images/xbrainstewx.png';
+import mewwobow from '/images/mewwobow.gif';
 
 export default function Comments() {
     const [comments, setComments] = useState([]);
