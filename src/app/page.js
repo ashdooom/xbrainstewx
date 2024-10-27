@@ -2,9 +2,9 @@ import styles from "./page.module.css";
 import "./globals.css";
 import Image from "next/image";
 import Link from "next/link";
-import xbrainstewx from '/public/images/xbrainstewx.png';
-import bubbles from '/public/images/bubbles.gif';
-import mewwoo from '/public/images/mewwoo.gif';
+import xbrainstewx from '/public/xbrainstewx.png';
+import bubbles from '/public/bubbles.gif';
+import mewwoo from '/public/mewwoo.gif';
 
 export default function Home() {
   return (
