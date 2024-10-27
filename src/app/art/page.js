@@ -11,7 +11,7 @@ import mew from '/public/mew.gif';
 
 const media = [
 
-    { src: "/art12.png", alt: "Art12", type: "image" },
+    { src: "/art12.PNG", alt: "Art12", type: "image" },
     { src: "/art8.png", alt: "Art8", type: "image" },
     { src: "/art9.png", alt: "Art9", type: "image" },
     { src: "/art10.png", alt: "Art10", type: "image" },
