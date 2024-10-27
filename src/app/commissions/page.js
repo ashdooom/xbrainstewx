@@ -4,8 +4,8 @@ import Image from "next/image";
 import styles from "../page.module.css";
 import { useState } from "react";
 import Link from "next/link";
-import xbrainstewx from '/images/xbrainstewx.png';
-import gloomy2 from '/images/gloomy2.gif';
+import xbrainstewx from '/public/images/xbrainstewx.png';
+import gloomy2 from '/public/images/gloomy2.gif';
 
 export default function Commissions() {
   const [formData, setFormData] = useState({

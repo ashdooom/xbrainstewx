@@ -2,8 +2,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import styles from "../app/page.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHandPointRight, faHandPointLeft } from "@fortawesome/free-solid-svg-icons";
 
 const media = [
 
@@ -26,19 +24,6 @@ const media = [
 ];
 
 const Slideshow = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === media.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? media.length - 1 : prevIndex - 1
-    );
-  };
 
   return (
     <div className={styles.slideshow}>
@@ -62,17 +47,6 @@ const Slideshow = () => {
           )}
         </div>
       ))}
-
-      <FontAwesomeIcon
-        icon={faHandPointLeft}
-        className={styles.iconLeft}
-        onClick={prevSlide}
-      />
-      <FontAwesomeIcon
-        icon={faHandPointRight}
-        className={styles.iconRight}
-        onClick={nextSlide}
-      />
     </div>
   );
 };

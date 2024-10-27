@@ -118,25 +118,34 @@
   width: 60vh;
 }
 
-.iconLeft, .iconRight {
+.mews {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #26ff00;
-  font-size: 100px;
+  display: flex;
+  flex-direction: row;
+  transform: scaleX(-1);
+  height: auto;
+}
+
+.mewRight,
+.mewLeft {
+  position: absolute;
+  top: 0;
+  transform: none;
   cursor: pointer;
-  z-index: 1; 
+  z-index: 1;
+  height: auto;
+  width: auto;
+}
+
+.mewLeft {
+  transform: scaleX(-1);
 }
 
 
-.iconLeft {
-  left: 500px;
-}
 
-.iconRight {
-  right: 500px;
+.kitty {
+  margin-top: 1vh;
 }
-
 
 .name {
   margin: 3vh;
@@ -272,7 +281,7 @@
   text-align: center;
   position: relative;
   background-color: var(--button-secondary-hover);
-  
+
 }
 
 .slideshow {
@@ -341,6 +350,13 @@
   padding: 1vh;
 }
 
+.mewText {
+  font-size: 1vh;
+  color: #ffffff;
+  background-color: var(--button-secondary-hover);
+  padding: 2vh;
+}
+
 .here {
   color: #ffa6fc;
   display: flex;
@@ -389,24 +405,34 @@
     min-height: 100vh;
   }
 
-  .iconLeft, .iconRight {
-    position: absolute;
-    top: 90%;
+  .mews {
+    position: relative;
+    transform: translateX(-50%);
+    
+  }
+
+  .mewLeft,
+  .mewRight {
+    position: relative;
+    top: 50%;
     transform: translateY(-50%);
-    color: #26ff00;
-    font-size: 5cqh;
     cursor: pointer;
-    z-index: 1; 
+    z-index: 1;
   }
-  
-  
-  .iconLeft {
-    left: 0px;
+
+
+  .mewLeft {
+    margin-right: 1vh;
   }
-  
-  .iconRight {
+
+  .mewRight {
     right: 0px;
+    transform: scaleX(-1);
+    margin-top: -41vh;
+    position: absolute;
   }
+
+
 
   .aboutArt {
     height: 40vh;
@@ -586,7 +612,34 @@
     margin-top: 30vh;
   }
 
+  .mews {
+    position: relative;
+    top: 200%;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: row;
+    height: 15vh;
+    width: 1vh;
+    margin-top: 15vh;
+  }
 
+
+  .mewLeft,
+  .mewRight {
+    top: 70%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1;
+    height: 30vh;
+    width: 15vh;
+  }
+
+
+  .mewLeft {
+    left: 0px;
+    transform: scaleX(-1);
+    margin-right: 4vh;
+  }
 }
 
 @media (max-width: 2500px) {
@@ -643,9 +696,9 @@
   }
 
   .mewwoo {
-
     height: 50vh;
   }
+
 
 }
 
@@ -695,6 +748,54 @@
     margin-top: -8vh;
   }
 
+  .mewText {
+    font-size: 1.5vh;
+    color: #ffffff;
+    background-color: var(--button-secondary-hover);
+    padding: 2vh;
+  }
+
+  .mews {
+    position: absolute;
+    top: 160%;
+    left: 50%;
+    display: flex;
+    flex-direction: row;
+    margin-right: 120vh;
+    transform: scaleX(-1);
+    margin-top: 35vh;
+
+  }
+
+  .mewRight,
+  .mewLeft {
+    position: absolute;
+    top: 0;
+    transform: none;
+    cursor: pointer;
+    z-index: 1;
+    margin-top: -30vh;
+    right: 15vh;
+    height: 20vh;
+  }
+
+  .mewLeft {
+    transform: scaleX(-1);
+    margin-top: -10vh;
+  }
+
+  .mewRight {
+    margin-top: 1vh;
+    margin-top: -11vh;
+    margin-right: -15vh;
+  }
+
+
+
+  .kitty {
+    margin-top: 1vh;
+  }
+
 }
 
 
@@ -708,12 +809,74 @@
     width: 60vh;
   }
 
+  .mews {
+    position: absolute;
+    top: 130%;
+    left: 50%;
+    display: flex;
+    flex-direction: row;
+    margin-right: 120vh;
+    transform: scaleX(-1);
 
+  }
 
+  .mewRight,
+  .mewLeft {
+    position: absolute;
+    top: 0;
+    transform: none;
+    cursor: pointer;
+    z-index: 1;
+    right: 15vh;
+    height: 20vh;
+  }
+
+  .mewLeft {
+    transform: scaleX(-1);
+    margin-top: -10vh;
+  }
+
+  .mewRight {
+    margin-top: 1vh;
+    margin-top: -11vh;
+    margin-right: -15vh;
+  }
 }
 
 @media (max-width: 950px) {
   .brain {
     width: 45vh;
   }
+}
+
+@media (min-width: 1280px) {
+  .mews {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    transform: scaleX(-1);
+    height: auto;
+  }
+  
+  .mewRight,
+  .mewLeft {
+    position: absolute;
+    top: 0;
+    transform: none;
+    cursor: pointer;
+    z-index: 1;
+    height: auto;
+    width: auto;
+  }
+  
+  .mewLeft {
+    transform: scaleX(-1);
+  }
+  
+  
+  
+  .kitty {
+    margin-top: 1vh;
+  }
+  
 }
