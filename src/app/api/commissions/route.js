@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import sendgrid from '@sendgrid/mail';
-import { db } from '../../util/firebase';
+import { db } from '../../../util/firebase'; 
 import { collection, addDoc } from 'firebase/firestore';
 
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
@@ -34,7 +34,6 @@ export async function POST(request) {
     });
     console.log("Emails sent successfully");
 
-
     return NextResponse.json({ message: 'Emails sent and data stored successfully!' }, { status: 200 });
 
   } catch (error) {
@@ -42,4 +41,3 @@ export async function POST(request) {
     return NextResponse.json({ message: 'Error handling request.' }, { status: 500 });
   }
 }
-
