@@ -5,10 +5,10 @@ import styles from "../page.module.css";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Slideshow from "@/components/Slideshow";
-import xbrainstewx from '/public/xbrainstewx.png';
-import kitty from '/public/kitty.gif';
-import aboutart from '/public/aboutart.PNG';
-import mew from '/public/mew.gif';
+import xbrainstewx from '/xbrainstewx.png';
+import kitty from '/kitty.gif';
+import aboutart from '/aboutart.PNG';
+import mew from '/mew.gif';
 
 const media = [
 

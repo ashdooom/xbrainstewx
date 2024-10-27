@@ -1,9 +1,9 @@
 import Image from "next/image";
 import styles from "../page.module.css";
 import Link from "next/link";
-import xbrainstewx from '/public/xbrainstewx.png';
-import mewwoflower from '/public/mewwoflower.gif';
-import selfie from '/public/selfie.png';
+import xbrainstewx from '/xbrainstewx.png';
+import mewwoflower from '/mewwoflower.gif';
+import selfie from '/selfie.png';
 
 export default function Programming() {
     return (
