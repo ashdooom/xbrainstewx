@@ -6,8 +6,9 @@ import { useState, useEffect } from "react";
 import { db } from "../util/firebase";
 import { collection, query, orderBy, onSnapshot, addDoc, serverTimestamp } from 'firebase/firestore';
 import Link from "next/link";
-import xbrainstewx from '/images/xbrainstewx.png';
-import mewwobow from '/images/mewwobow.gif';
+import xbrainstewx from '/public/images/xbrainstewx.png';
+import mewwobow from '/public/images/mewwobow.gif';
+import girrr from '/public/images/girrr.gif';
 
 export default function Comments() {
     const [comments, setComments] = useState([]);
@@ -71,13 +72,14 @@ export default function Comments() {
                 <Link href="/about" className={styles.links}>about</Link>
                 <Link href="/comments" className={styles.links}>comments</Link>
             </div>
-            <div className={styles.commentBelow}>
+            <div className={styles.commentForm}>
                 <p>leave a comment below</p>
             </div>
             <div>
                 <Image src={mewwobow} className={styles.mewwoBow} alt="mewwo bow gif" />
             </div>
             <form className={styles.commentForm} onSubmit={handleSubmit}>
+                <Image className={styles.girrr} src={girrr} />
                 <input
                     placeholder="name"
                     className={styles.name}
@@ -96,7 +98,7 @@ export default function Comments() {
             <div className={styles.commentsSection}>
                 {comments.map(comment => (
                     <div key={comment.id} className={styles.comment}>
-                        <h1>⊹₊⟡⋆</h1>
+                        <h1>𐙚⊹₊⋆☆</h1>
                         <p className={styles.commentText}><strong>{comment.name}:</strong></p>
                         <p className={styles.commentText}>{comment.text}</p>
                         <p className={styles.commentTimestamp}>
