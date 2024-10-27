@@ -6,6 +6,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHandPointRight, faHandPointLeft } from "@fortawesome/free-solid-svg-icons";
 
 const media = [
+
+  { src: "/images/art12.png", alt: "Art12", type: "image" },
   { src: "/images/art8.png", alt: "Art8", type: "image" },
   { src: "/images/art9.png", alt: "Art9", type: "image" },
   { src: "/images/art10.png", alt: "Art10", type: "image" },

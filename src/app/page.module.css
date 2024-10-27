@@ -269,6 +269,7 @@
   text-align: center;
   position: relative;
   background-color: var(--button-secondary-hover);
+  
 }
 
 .slideshow {
@@ -633,7 +634,7 @@
   .about {
     color: #93f400;
     margin-top: 20vh;
-    font-size: 3vh;
+    font-size: 2vh;
     text-align: center;
     position: relative;
   }
