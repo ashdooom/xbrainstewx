@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import sendgrid from '@sendgrid/mail';
-import { db } from '../util/firebase';
+import { db } from '../../util/firebase';
 import { collection, addDoc } from 'firebase/firestore';
 
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
@@ -15,8 +15,7 @@ export async function POST(request) {
       return NextResponse.json({ message: 'All fields are required.' }, { status: 400 });
     }
 
-    console.log("Data received:", { name, email, phoneNumber, projectDetails });
-
+    console.log("Attempting to add document to Firestore...");
     const docRef = await addDoc(collection(db, 'commission-requests'), {
       name,
       email,
@@ -24,15 +23,17 @@ export async function POST(request) {
       projectDetails,
       timestamp: new Date(),
     });
+    console.log("Document added with ID:", docRef.id);
 
+    console.log("Attempting to send email via SendGrid...");
     await sendgrid.send({
       to: email,
       from: 'confirmation@xbrainstewx.com',
       templateId: 'd-776bf58e9dbf4461aa83cbcbdcff5de5',
       dynamicTemplateData: { name, projectDetails, phoneNumber }
     });
-
     console.log("Emails sent successfully");
+
 
     return NextResponse.json({ message: 'Emails sent and data stored successfully!' }, { status: 200 });
 
