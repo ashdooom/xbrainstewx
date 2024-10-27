@@ -5,29 +5,29 @@ import styles from "../page.module.css";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Slideshow from "@/components/Slideshow";
-import xbrainstewx from '/public/images/xbrainstewx.png';
-import kitty from '/public/images/kitty.gif';
-import aboutart from '/public/images/aboutart.PNG';
-import mew from '/public/images/mew.gif';
+import xbrainstewx from '/public/xbrainstewx.png';
+import kitty from '/public/kitty.gif';
+import aboutart from '/public/aboutart.PNG';
+import mew from '/public/mew.gif';
 
 const media = [
 
-    { src: "/images/art12.png", alt: "Art12", type: "image" },
-    { src: "/images/art8.png", alt: "Art8", type: "image" },
-    { src: "/images/art9.png", alt: "Art9", type: "image" },
-    { src: "/images/art10.png", alt: "Art10", type: "image" },
-    { src: "/images/art11.png", alt: "Art11", type: "image" },
-    { src: "/images/art7.PNG", alt: "Art7", type: "image" },
-    { src: "/images/closeup3.jpg", alt: "Closeup 3", type: "image" },
-    { src: "/images/art1.jpg", alt: "art1", type: "image" },
-    { src: "/images/art2.jpg", alt: "art2", type: "image" },
-    { src: "/images/art3.png", alt: "art3", type: "image" },
-    { src: "/images/closeup.jpg", alt: "Closeup", type: "image" },
-    { src: "/images/art4.png", alt: "Art4", type: "image" },
-    { src: "/images/closeup2.jpg", alt: "Closeup 2", type: "image" },
-    { src: "/images/art5.png", alt: "Art5", type: "image" },
-    { src: "/images/art6.png", alt: "Art6", type: "image" },
-    { src: "/images/vid.mp4", alt: "Clouds Video", type: "video" },
+    { src: "/art12.png", alt: "Art12", type: "image" },
+    { src: "/art8.png", alt: "Art8", type: "image" },
+    { src: "/art9.png", alt: "Art9", type: "image" },
+    { src: "/art10.png", alt: "Art10", type: "image" },
+    { src: "/art11.png", alt: "Art11", type: "image" },
+    { src: "/art7.PNG", alt: "Art7", type: "image" },
+    { src: "/closeup3.jpg", alt: "Closeup 3", type: "image" },
+    { src: "/art1.jpg", alt: "art1", type: "image" },
+    { src: "/art2.jpg", alt: "art2", type: "image" },
+    { src: "/art3.png", alt: "art3", type: "image" },
+    { src: "/closeup.jpg", alt: "Closeup", type: "image" },
+    { src: "/art4.png", alt: "Art4", type: "image" },
+    { src: "/closeup2.jpg", alt: "Closeup 2", type: "image" },
+    { src: "/art5.png", alt: "Art5", type: "image" },
+    { src: "/art6.png", alt: "Art6", type: "image" },
+    { src: "/vid.mp4", alt: "Clouds Video", type: "video" },
 ];
 
 export default function Art() {
