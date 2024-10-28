@@ -29,6 +29,24 @@
     --button-secondary-hover: #1a1a1a;
   }
 }
+.scrollComments {
+  overflow: scroll;
+  height: 100vh;
+  scrollbar-color: #0f0 #000; 
+  scrollbar-width: thin;
+}
+
+.scrollComments::-webkit-scrollbar {
+  width: 12px;
+}
+.scrollComments::-webkit-scrollbar-track {
+  background: #000; /* Black track */
+}
+.scrollComments::-webkit-scrollbar-thumb {
+  background-color: #0f0;
+  border-radius: 10px;
+  border: 2px solid #000; 
+}
 
 .main {
   display: flex;
@@ -146,6 +164,16 @@
 .kitty {
   margin-top: 1vh;
 }
+
+.modalOverlay {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.modalContent {
+  padding: 4vh;
+}
+
 
 .name {
   margin: 3vh;
@@ -579,6 +607,11 @@
 
 @media (max-width: 2368px) {
 
+  .page  {
+    background-repeat: repeat;
+    background-attachment: fixed;
+  }
+
 
   .umb {
     height: 40vh;
@@ -708,6 +741,11 @@
 
 @media (max-width: 2500px) {
 
+  .page {
+    background-repeat: repeat;
+    background-attachment: fixed;
+  }
+
   .brain {
     width: 100vh;
     height: 30vh;
@@ -804,6 +842,12 @@
 
 
 @media (max-width: 1200px) {
+
+  .page {
+    background-repeat: repeat;
+    background-attachment: fixed;
+  }
+
   .linksContainer {
     display: inline-block;
     margin: 5vh;
@@ -849,12 +893,24 @@
 }
 
 @media (max-width: 950px) {
+
+  .page {
+    background-repeat: repeat;
+    background-attachment: fixed;
+  }
+
   .brain {
     width: 45vh;
   }
 }
 
 @media (min-width: 1280px) {
+
+  .page {
+    background-repeat: repeat;
+    background-attachment: fixed;
+  }
+
   .mews {
     position: absolute;
     display: flex;

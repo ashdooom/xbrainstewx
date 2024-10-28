@@ -94,20 +94,19 @@ export default function Comments() {
                 />
                 <button type="submit" className={styles.commentButton}>add comment</button>
             </form>
-
-            <div className={styles.commentsSection}>
-                {comments.map(comment => (
-                    <div key={comment.id} className={styles.comment}>
-                        <h1>𐙚⊹₊⋆☆</h1>
-                        <p className={styles.commentText}><strong>{comment.name}:</strong></p>
-                        <p className={styles.commentText}>{comment.text}</p>
-                        <p className={styles.commentTimestamp}>
-                            {comment.timestamp?.toDate ? comment.timestamp.toDate().toLocaleString() : "Just now"}
-                        </p>
-
-
-                    </div>
-                ))}
+            <div className={styles.scrollComments}>
+                <div className={styles.commentsSection}>
+                    {comments.map(comment => (
+                        <div key={comment.id} className={styles.comment}>
+                            <h1>𐙚⊹₊⋆☆</h1>
+                            <p className={styles.commentText}><strong>{comment.name}:</strong></p>
+                            <p className={styles.commentText}>{comment.text}</p>
+                            <p className={styles.commentTimestamp}>
+                                {comment.timestamp?.toDate ? comment.timestamp.toDate().toLocaleString() : "Just now"}
+                            </p>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     );

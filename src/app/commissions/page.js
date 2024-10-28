@@ -7,6 +7,7 @@ import Link from "next/link";
 import xbrainstewx from '/public/xbrainstewx.png';
 import gloomy2 from '/public/gloomy2.gif';
 
+
 export default function Commissions() {
   const [formData, setFormData] = useState({
     name: '',
@@ -16,6 +17,7 @@ export default function Commissions() {
   });
 
   const [statusMessage, setStatusMessage] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -42,12 +44,19 @@ export default function Commissions() {
           phoneNumber: '',
           projectDetails: '',
         });
+        setIsModalOpen(true);  
       } else {
         setStatusMessage('Submission failed: ' + response.statusText);
+        setIsModalOpen(true);  
       }
     } catch (error) {
       setStatusMessage('Error submitting form: ' + error.message);
+      setIsModalOpen(true); 
     }
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -120,7 +129,22 @@ export default function Commissions() {
           </div>
           <button type="submit">Submit</button>
         </form>
-        {statusMessage && <p>{statusMessage}</p>}
+      </div>
+      {isModalOpen && (
+        <Modal onClose={closeModal}>
+          <p>{statusMessage}</p>
+          <button onClick={closeModal}>Close</button>
+        </Modal>
+      )}
+    </div>
+  );
+}
+
+function Modal({ children, onClose }) {
+  return (
+    <div className={styles.modalOverlay}>
+      <div className={styles.modalContent}>
+        {children}
       </div>
     </div>
   );
