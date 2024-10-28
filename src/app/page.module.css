@@ -15,8 +15,9 @@
   gap: 64px;
   font-family: var(--font-geist-sans);
   background-image: url('/images/l.webp');
-  background-repeat: repeat;
   background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -430,9 +431,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background-repeat: repeat;
+    min-height: 100vh;  
     background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
   }
 
   .mews {
@@ -608,8 +610,9 @@
 @media (max-width: 2368px) {
 
   .page  {
-    background-repeat: repeat;
     background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
   }
 
 
@@ -685,8 +688,9 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-repeat: repeat;
     background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
   }
 
   .selfie {
@@ -742,8 +746,9 @@
 @media (max-width: 2500px) {
 
   .page {
-    background-repeat: repeat;
     background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
   }
 
   .brain {
@@ -844,8 +849,9 @@
 @media (max-width: 1200px) {
 
   .page {
-    background-repeat: repeat;
     background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
   }
 
   .linksContainer {
@@ -895,8 +901,9 @@
 @media (max-width: 950px) {
 
   .page {
-    background-repeat: repeat;
     background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
   }
 
   .brain {
@@ -907,8 +914,9 @@
 @media (min-width: 1280px) {
 
   .page {
-    background-repeat: repeat;
     background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
   }
 
   .mews {
