@@ -9,7 +9,16 @@ export async function POST(request) {
   try {
     console.log("Incoming POST request to /commissions");
 
-    const { name, email, phoneNumber, projectDetails } = await request.json();
+    // Parse JSON data with error handling
+    let parsedData;
+    try {
+      parsedData = await request.json();
+    } catch (jsonError) {
+      console.error("Failed to parse request body:", jsonError);
+      return NextResponse.json({ message: 'Invalid JSON payload.' }, { status: 400 });
+    }
+
+    const { name, email, phoneNumber, projectDetails } = parsedData;
     console.log("Parsed request data:", { name, email, phoneNumber, projectDetails });
 
     if (!name || !email || !phoneNumber || !projectDetails) {
@@ -17,6 +26,8 @@ export async function POST(request) {
       return NextResponse.json({ message: 'All fields are required.' }, { status: 400 });
     }
 
+    // Firestore operation
+    console.log("Firestore config check:", db ? "Initialized" : "Missing");
     console.log("Attempting to add document to Firestore...");
     const docRef = await addDoc(collection(db, 'commission-requests'), {
       name,
@@ -27,6 +38,8 @@ export async function POST(request) {
     });
     console.log("Document added with ID:", docRef.id);
 
+    // Send email with SendGrid
+    console.log("SENDGRID_API_KEY is", process.env.SENDGRID_API_KEY ? "Present" : "Missing");
     console.log("Attempting to send email via SendGrid...");
     await sendgrid.send({
       to: email,
@@ -40,6 +53,9 @@ export async function POST(request) {
 
   } catch (error) {
     console.error("Error handling POST request:", error);
+    if (error.response) {
+      console.error("Error response from SendGrid:", error.response.body);
+    }
     return NextResponse.json({ message: 'Error handling request.', error: error.message }, { status: 500 });
   }
 }
