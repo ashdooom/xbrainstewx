@@ -1,7 +1,13 @@
 service cloud.firestore {
     match /databases/{database}/documents {
+
         match /comments/{comment} {
             allow read, write: if true;
         }
+        
+        match /commission-requests/{request} {
+            allow read, write: if true; 
+        }
     }
 }
+
