@@ -51,7 +51,7 @@ export default function Art() {
             <div className={styles.linksContainer}>
                 <Link href="/programming" className={styles.links}>programming portfolio</Link>
                 <Link href="/art" className={styles.links}>art portfolio</Link>
-                <Link href="/commissions" className={styles.links}>commissions</Link>
+                <Link href="/commissions" className={styles.links} onClick={() => alert('commission form is currently unavailable. check back soon or message me on IG @xbrainstewx.art✨')}>commissions</Link>
                 <Link href="/about" className={styles.links}>about</Link>
                 <Link href="/comments" className={styles.links}>comments</Link>
             </div>
