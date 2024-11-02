@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import sendgrid from '@sendgrid/mail';
 import { db } from '../../util/firebase';
 import { collection, addDoc } from 'firebase/firestore';
+import getConnection from '../../util/sqlConnection';
 
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
 
@@ -9,7 +10,6 @@ export async function POST(request) {
   try {
     console.log("Incoming POST request to /commissions");
 
-    // Parse JSON data with error handling
     let parsedData;
     try {
       parsedData = await request.json();
@@ -25,8 +25,7 @@ export async function POST(request) {
       console.error("Validation failed. Missing fields.");
       return NextResponse.json({ message: 'All fields are required.' }, { status: 400 });
     }
-
-    // Firestore operation
+    
     console.log("Firestore config check:", db ? "Initialized" : "Missing");
     console.log("Attempting to add document to Firestore...");
     const docRef = await addDoc(collection(db, 'commission-requests'), {
@@ -37,9 +36,20 @@ export async function POST(request) {
       timestamp: new Date(),
     });
     console.log("Document added with ID:", docRef.id);
+
+    // MySQL operation
+    console.log("Connecting to MySQL...");
+    const connection = await getConnection();
+    const query = `
+      INSERT INTO commissions (name, email, phone_number, project_details)
+      VALUES (?, ?, ?, ?)
+    `;
+    await connection.execute(query, [name, email, phoneNumber, projectDetails]);
+    console.log("Data inserted successfully into MySQL");
+
+    // SendGrid operation
     console.log("SENDGRID_API_KEY is", process.env.SENDGRID_API_KEY ? "Present" : "Missing");
     console.log("Attempting to send email via SendGrid...");
-    console.log("Connecting to MySQL...");
     await sendgrid.send({
       to: email,
       from: 'confirmation@xbrainstewx.com',

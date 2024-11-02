@@ -6,11 +6,10 @@ import { useState } from "react";
 import Link from "next/link";
 import xbrainstewx from '/public/xbrainstewx.png';
 import gloomy2 from '/public/gloomy2.gif';
+import bat from '/public/bat.gif';
 import { useRouter } from "next/navigation";
 
-
 export default function Commissions() {
-
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -39,7 +38,7 @@ export default function Commissions() {
       });
 
       if (response.ok) {
-        setStatusMessage('thanks for your information and trust. i will get back to you as soon as possible.');
+        setStatusMessage('Thanks for your information and trust. I will get back to you as soon as possible.');
         setFormData({
           name: '',
           email: '',
@@ -61,6 +60,10 @@ export default function Commissions() {
     setIsModalOpen(false);
   };
 
+  function openNewWindow() {
+    window.open("https://instagram.com/xbrainstewx.art", "_blank");
+  }
+
   return (
     <div className={styles.page}>
       <Link href='/'>
@@ -79,6 +82,10 @@ export default function Commissions() {
       <div className={styles.commForm}>
         <p className={styles.commForm}>
           fill out this form for a website or art commission
+        </p>
+        <Image src={bat} />
+        <p>
+          or, follow me on instagram <a onClick={openNewWindow} className={styles.here}>here</a>
         </p>
       </div>
       <div className={styles.commBg}>
@@ -147,6 +154,7 @@ function Modal({ children, onClose }) {
     <div className={styles.modalOverlay}>
       <div className={styles.modalContent}>
         {children}
+        <button onClick={onClose}>Close</button>
       </div>
     </div>
   );
