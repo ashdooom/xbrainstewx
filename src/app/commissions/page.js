@@ -6,9 +6,11 @@ import { useState } from "react";
 import Link from "next/link";
 import xbrainstewx from '/public/xbrainstewx.png';
 import gloomy2 from '/public/gloomy2.gif';
+import { useRouter } from "next/navigation";
 
 
 export default function Commissions() {
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -44,14 +46,14 @@ export default function Commissions() {
           phoneNumber: '',
           projectDetails: '',
         });
-        setIsModalOpen(true);  
+        setIsModalOpen(true);
       } else {
         setStatusMessage('Submission failed: ' + response.statusText);
-        setIsModalOpen(true);  
+        setIsModalOpen(true);
       }
     } catch (error) {
       setStatusMessage('Error submitting form: ' + error.message);
-      setIsModalOpen(true); 
+      setIsModalOpen(true);
     }
   };
 
@@ -67,7 +69,7 @@ export default function Commissions() {
       <div className={styles.linksContainer}>
         <Link href="/programming" className={styles.links}>programming portfolio</Link>
         <Link href="/art" className={styles.links}>art portfolio</Link>
-        <Link href="/commissions" className={styles.links} onClick={() => alert('commission form is currently unavailable. check back soon or message me on IG @xbrainstewx.art✨')}>commissions</Link>
+        <Link href="/commissions" className={styles.links}>commissions</Link>
         <Link href="/about" className={styles.links}>about</Link>
         <Link href="/comments" className={styles.links}>comments</Link>
       </div>

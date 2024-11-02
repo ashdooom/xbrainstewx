@@ -37,10 +37,9 @@ export async function POST(request) {
       timestamp: new Date(),
     });
     console.log("Document added with ID:", docRef.id);
-
-    // Send email with SendGrid
     console.log("SENDGRID_API_KEY is", process.env.SENDGRID_API_KEY ? "Present" : "Missing");
     console.log("Attempting to send email via SendGrid...");
+    console.log("Connecting to MySQL...");
     await sendgrid.send({
       to: email,
       from: 'confirmation@xbrainstewx.com',
