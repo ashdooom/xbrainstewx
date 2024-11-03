@@ -721,6 +721,9 @@
     transform: scaleX(-1);
     margin-right: 4vh;
   }
+
+  
+  
 }
 
 @media (max-width: 2500px) {
@@ -783,7 +786,7 @@
     height: 50vh;
   }
 
-
+  
 }
 
 @media (max-width: 2500px) {
@@ -939,9 +942,13 @@
     margin-top: -11vh;
     margin-right: -15vh;
   }
+ 
+
+ 
+  
 }
 
-@media (max-width: 950px) {
+@media (max-width: 956px) {
 
   .page {
     background-attachment: fixed;
@@ -951,6 +958,28 @@
 
   .brain {
     width: 45vh;
+  }
+
+  .beautySchool {
+    height: 40vh;
+    width: 95%; 
+  }
+
+  .videoContainer {
+    width: 100%;
+    padding: 5px;
+    border: none; 
+  }
+
+  .video {
+    width: 60vw; 
+    padding: 2vh;
+    height: auto;
+  }
+
+  .xbrainspacex {
+    width: 90vw; 
+    height: auto;
   }
 }
 
@@ -985,10 +1014,10 @@
     transform: scaleX(-1);
   }
   
-  
-  
   .kitty {
     margin-top: 1vh;
   }
+
+
   
 }
