@@ -6,8 +6,14 @@ import Link from "next/link";
 import xbrainstewx from '/public/xbrainstewx.png';
 import mewwoumb from '/public/mewwoumb.gif';
 import beautySchool from '/public/beautySchool.png';
+import { useState } from "react";
 
 export default function Programming() {
+
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => setDropdownOpen(!isDropdownOpen);
+
   return (
     <div className={styles.page}>
       <Link href='/'>
@@ -57,9 +63,21 @@ export default function Programming() {
         <br />
         <br />
       </div>
+      <div className={styles.dropdown}>
+        <button className={styles.dropdownButton} onClick={toggleDropdown}>
+          click here to sort
+        </button>
+        {isDropdownOpen && (
+          <div className={styles.dropdownContent}>
+            <a href="#websites">Websites</a>
+            <br />
+            <a href="#apps">Apps</a>
+          </div>
+        )}
+      </div>
       <div className={styles.code}>
         <div className={styles.scrollComments}>
-          <div className={styles.projects}>
+          <div id="apps" className={styles.projects}>
             <video src='/bunnyRanch.mp4' autoPlay loop controls className={styles.video} />
             <p className={styles.projectDetails}>
               ☆ theBunnyRanch ☆
@@ -138,7 +156,7 @@ export default function Programming() {
               <br />
             </p>
           </div>
-          <div className={styles.projects}>
+          <div id="websites" className={styles.projects}>
             <div className={styles.videoContainer}>
               <video src="/xbrainspacex.mp4" autoPlay loop muted className={styles.xbrainspacex} />
             </div>
