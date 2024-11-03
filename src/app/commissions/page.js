@@ -7,7 +7,6 @@ import Link from "next/link";
 import xbrainstewx from '/public/xbrainstewx.png';
 import gloomy2 from '/public/gloomy2.gif';
 import bat from '/public/bat.gif';
-import { useRouter } from "next/navigation";
 
 export default function Commissions() {
   const [formData, setFormData] = useState({
@@ -72,12 +71,9 @@ export default function Commissions() {
       <div className={styles.linksContainer}>
         <Link href="/programming" className={styles.links}>programming portfolio</Link>
         <Link href="/art" className={styles.links}>art portfolio</Link>
-        <Link href="/commissions" className={styles.links}>commissions</Link>
+        <Link href="/commissions" className={styles.links} onClick={() => alert('commission form is currently unavailable. check back soon or email me at ashley@xbrainstewx.com✨')}>commissions</Link>
         <Link href="/about" className={styles.links}>about</Link>
         <Link href="/comments" className={styles.links}>comments</Link>
-      </div>
-      <div>
-        <Image src={gloomy2} className={styles.gloomy2} />
       </div>
       <div className={styles.commForm}>
         <p className={styles.commForm}>

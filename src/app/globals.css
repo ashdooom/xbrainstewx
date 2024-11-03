@@ -18,7 +18,7 @@ body {
 
 body {
   color: var(--foreground);
-  background-image: url('/l.webp');
+  background-image: url('/bg.jpg');
   background-repeat: repeat;
   background-attachment:fixed;
   font-family: monospace;
