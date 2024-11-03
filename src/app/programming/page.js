@@ -225,11 +225,7 @@ export default function Programming() {
           </div>
           <div>
             <Image className={styles.beautySchool} src={beautySchool} />
-            <br />
-            <br />
-                 ────୨ৎ────
-            <br />
-            <br />
+        
             <p className={styles.projectDetails}>
             ────୨ৎ────
             <br />
