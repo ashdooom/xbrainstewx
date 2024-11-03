@@ -77,9 +77,13 @@ export default function Programming() {
       </div>
       <div className={styles.code}>
         <div className={styles.scrollComments}>
+          ────୨ৎ────
           <div id="apps" className={styles.projects}>
             <video src='/bunnyRanch.mp4' autoPlay loop controls className={styles.video} />
             <p className={styles.projectDetails}>
+              ────୨ৎ────
+              <br />
+              <br />
               ☆ theBunnyRanch ☆
               <br />
               <br />
@@ -124,9 +128,15 @@ export default function Programming() {
           </div>
           <br />
           <br />
+          ────୨ৎ────
+          <br />
+          <br />
           <div className={styles.projects}>
             <video src='/gotGenerator.mp4' autoPlay loop controls className={styles.video} />
             <p className={styles.projectDetails}>
+            ────୨ৎ────
+            <br />
+            <br />
               ☆ Game of Thrones Quote Generator ☆
               <br />
               <br />
@@ -143,7 +153,7 @@ export default function Programming() {
               ☆ Responsive Design: Designed for mobile devices, the app provides a seamless experience on both iOS and Android platforms.
               <br />
               <br />
-              ☆ Technologies Used:
+              ☆ Technologies Used: ☆
               <br />
               <br />
               ☆ React Native: For cross-platform mobile development.
@@ -156,6 +166,9 @@ export default function Programming() {
               <br />
             </p>
           </div>
+          ────୨ৎ────
+            <br />
+            <br />
           <div id="websites" className={styles.projects}>
             <div className={styles.videoContainer}>
               <video src="/xbrainspacex.mp4" autoPlay loop muted className={styles.xbrainspacex} />
@@ -187,7 +200,7 @@ export default function Programming() {
               ☆ Contact Options: Provides direct access to my professional profiles and includes a functional mailto link for inquiries, supporting easy client connections.
               <br />
               <br />
-              ☆ Technologies Used:
+              ☆ Technologies Used: ☆
               <br />
               <br />
               ☆ Next.js: For server-side rendering and client-side routing, improving load times and enabling SEO-friendly project pages.
@@ -212,7 +225,15 @@ export default function Programming() {
           </div>
           <div>
             <Image className={styles.beautySchool} src={beautySchool} />
+            <br />
+            <br />
+                 ────୨ৎ────
+            <br />
+            <br />
             <p className={styles.projectDetails}>
+            ────୨ৎ────
+            <br />
+            <br />
               ☆ Hair by Adrian ☆
               <br />
               <br />
@@ -263,6 +284,9 @@ export default function Programming() {
               <br />
               This project reflects Adrian’s commitment to creativity and professionalism in cosmetology, creating a digital space that celebrates alternative hairstyles and invites potential clients and collaborators to connect.
             </p>
+            ────୨ৎ────
+            <br />
+            <br />
           </div>
         </div>
       </div>
