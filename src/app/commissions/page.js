@@ -65,9 +65,16 @@ export default function Commissions() {
 
   return (
     <div className={styles.page}>
-      <Link href='/'>
-        <Image src={xbrainstewx} className={styles.brain} />
-      </Link>
+      <div className={styles.brainContainer}>
+        <Link href='/'>
+          <Image src={xbrainstewx} className={styles.brain} />
+        </Link>
+      </div>
+      <div className={styles.blogContainer}>
+        <p className={styles.blog}>
+        ✰ check out my personal blog @ <a className={styles.blogLink} href="https://xbrainspacex.com">xbrainspacex.com</a> ✰
+        </p>
+      </div>
       <div className={styles.linksContainer}>
         <Link href="/programming" className={styles.links}>programming portfolio</Link>
         <Link href="/art" className={styles.links}>art portfolio</Link>

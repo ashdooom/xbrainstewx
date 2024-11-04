@@ -9,16 +9,22 @@ import beautySchool from '/public/beautySchool.png';
 import { useState } from "react";
 
 export default function Programming() {
-
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
   const toggleDropdown = () => setDropdownOpen(!isDropdownOpen);
 
   return (
     <div className={styles.page}>
-      <Link href='/'>
-        <Image src={xbrainstewx} className={styles.brain} />
-      </Link>
+      <div className={styles.brainContainer}>
+        <Link href='/'>
+          <Image src={xbrainstewx} className={styles.brain} />
+        </Link>
+      </div>
+      <div className={styles.blogContainer}>
+        <p className={styles.blog}>
+        ✰ check out my personal blog @ <a className={styles.blogLink} href="https://xbrainspacex.com">xbrainspacex.com</a> ✰
+        </p>
+      </div>
       <div className={styles.linksContainer}>
         <Link href="/programming" className={styles.links}>programming portfolio</Link>
         <Link href="/art" className={styles.links}>art portfolio</Link>
@@ -26,6 +32,7 @@ export default function Programming() {
         <Link href="/about" className={styles.links}>about</Link>
         <Link href="/comments" className={styles.links}>comments</Link>
       </div>
+
       <div>
         <Image src={mewwoumb} className={styles.umb} />
       </div>
@@ -134,9 +141,9 @@ export default function Programming() {
           <div className={styles.projects}>
             <video src='/gotGenerator.mp4' autoPlay loop controls className={styles.video} />
             <p className={styles.projectDetails}>
-            ────୨ৎ────
-            <br />
-            <br />
+              ────୨ৎ────
+              <br />
+              <br />
               ☆ Game of Thrones Quote Generator ☆
               <br />
               <br />
@@ -167,8 +174,8 @@ export default function Programming() {
             </p>
           </div>
           ────୨ৎ────
-            <br />
-            <br />
+          <br />
+          <br />
           <div id="websites" className={styles.projects}>
             <div className={styles.videoContainer}>
               <video src="/xbrainspacex.mp4" autoPlay loop muted className={styles.xbrainspacex} />
@@ -192,9 +199,6 @@ export default function Programming() {
               <br />
               <br />
               ☆ Video Integration: Demonstrative video files of projects (e.g., theBunnyRanch app and Game of Thrones Quote Generator) are integrated directly, allowing potential clients to see projects in action.
-              <br />
-              <br />
-              ☆ Project-Specific Details: Each project section provides detailed descriptions of the goals, features, and technologies used, offering an in-depth view of the developer’s expertise.
               <br />
               <br />
               ☆ Contact Options: Provides direct access to my professional profiles and includes a functional mailto link for inquiries, supporting easy client connections.
@@ -225,11 +229,11 @@ export default function Programming() {
           </div>
           <div>
             <Image className={styles.beautySchool} src={beautySchool} />
-        
+
             <p className={styles.projectDetails}>
-            ────୨ৎ────
-            <br />
-            <br />
+              ────୨ৎ────
+              <br />
+              <br />
               ☆ Hair by Adrian ☆
               <br />
               <br />

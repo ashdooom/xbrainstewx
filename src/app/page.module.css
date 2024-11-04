@@ -127,6 +127,7 @@
   height: 50vh;
 }
 
+
 .gif {
   height: 10vh;
   position: absolute;
@@ -504,6 +505,15 @@
   display: block;
 }
 
+.blog {
+  color: #ffffff;
+  text-align: center;
+  margin-top: -7vh;
+}
+
+.blogLink {
+  color: #93f400
+}
 
 @media (max-width: 1110px) {
   .page {
@@ -1023,6 +1033,16 @@
   .xbrainspacex {
     width: 90vw; 
     height: auto;
+  }
+
+  .blog {
+    color: #ffffff;
+    text-align: center;
+    margin-top: -1vh;
+  }
+  
+  .blogLink {
+    color: #93f400
   }
 }
 

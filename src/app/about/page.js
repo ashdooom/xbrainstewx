@@ -15,6 +15,11 @@ export default function Programming() {
                     <Image src={xbrainstewx} className={styles.brain} />
                 </Link>
             </div>
+            <div className={styles.blogContainer}>
+                <p className={styles.blog}>
+                ✰ check out my personal blog @ <a className={styles.blogLink} href="https://xbrainspacex.com">xbrainspacex.com</a> ✰
+                </p>
+            </div>
             <div className={styles.linksContainer}>
                 <Link href="/programming" className={styles.links}>programming portfolio</Link>
                 <Link href="/art" className={styles.links}>art portfolio</Link>
@@ -22,6 +27,7 @@ export default function Programming() {
                 <Link href="/about" className={styles.links}>about</Link>
                 <Link href="/comments" className={styles.links}>comments</Link>
             </div>
+
             <div>
                 <Image src={selfie} className={styles.selfie} />
             </div>
