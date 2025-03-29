@@ -137,7 +137,7 @@ export default function CommissionForm() {
       {error && <p className={styles.error}>{error}</p>}
 
       <button type="submit" className={styles.button} disabled={isSubmitting || uploading}>
-        {isSubmitting ? "sending..." : "submit ☆彡"}
+        {isSubmitting ? "sending..." : "submit"}
       </button>
     </form>
   );
