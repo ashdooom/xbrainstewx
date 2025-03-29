@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import { db } from '../../../firebase';
+import { storage } from '../../../firebase';
 import { collection, addDoc, onSnapshot, serverTimestamp, query, orderBy } from 'firebase/firestore';
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 export default function Guestbook() {
   const [entries, setEntries] = useState([]);
