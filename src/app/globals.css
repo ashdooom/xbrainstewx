@@ -22,7 +22,11 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('/background.jpg');
+  font-family: var(--font-pixelify-sans);
+  cursor: url(https://cur.cursors-4u.net/anime/ani-1/ani197.png), auto !important;
 }
+
 
 * {
   box-sizing: border-box;
@@ -39,4 +43,121 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+.guestbook {
+  background: radial-gradient(circle at top left, rgba(255, 102, 204, 0.08), rgba(0, 0, 0, 0.9));
+  border: 2px solid #ff66cc;
+  border-radius: 16px;
+  box-shadow: 0 0 15px #ff99ff, 0 0 25px #ff66cc;
+  padding: 1.5rem;
+  margin-left: auto;
+  max-height: 700px;
+  backdrop-filter: blur(6px);
+  height: 40vh;
+  width: 15vw;
+}
+
+.guestbookTitle {
+  font-size: 2rem;
+  color: #ffffff;
+  font-family: var(--font-pixelify-sans);
+  text-shadow: 0 0 7px #ff66cc, 0 0 14px #ffccff;
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+
+.guestbookForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.guestInput,
+.guestTextarea {
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px dashed #ff66cc;
+  border-radius: 6px;
+  padding: 0.6rem;
+  color: #fff;
+  font-family: var(--font-pixelify-sans);
+  font-size: 1rem;
+  box-shadow: inset 0 0 4px #ff99ff;
+  outline: none;
+}
+
+.guestInput::placeholder,
+.guestTextarea::placeholder {
+  color: #ffb6e6;
+  font-style: italic;
+}
+
+.guestButton {
+  background: linear-gradient(145deg, #ff66cc, #ff99ff);
+  color: black;
+  border: none;
+  padding: 0.6rem 1rem;
+  font-family: var(--font-pixelify-sans);
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 8px;
+  box-shadow: 0 0 8px #ff99ff;
+  transition: all 0.25s ease-in-out;
+}
+
+.guestButton:hover {
+  background: #ffffff;
+  color: #ff66cc;
+  text-shadow: 0 0 5px #ff99ff;
+  transform: scale(1.03);
+}
+
+.guestMessages {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.guestEntry {
+  background: rgba(255, 102, 204, 0.05);
+  border-left: 3px solid #ff66cc;
+  padding: 1rem;
+  font-size: 0.95rem;
+  font-family: var(--font-pixelify-sans);
+  color: #fff;
+  box-shadow: 0 0 10px #ff66cc;
+  border-radius: 6px;
+}
+
+.guestName {
+  font-weight: bold;
+  color: #ff99ff;
+  text-shadow: 0 0 4px #fff, 0 0 8px #ffccff;
+  font-size: 1.05rem;
+}
+
+.guestMessage {
+  margin-top: 0.5rem;
+  white-space: pre-wrap;
+  color: #f8d6f5;
+}
+
+
+@keyframes sparkleFade {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -80%) scale(0.5);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .guestbook {
+    width: 90vw;
+  }
+  
 }
