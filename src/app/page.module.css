@@ -943,18 +943,54 @@
   .selfie {
     width: 90vw;
     max-width: 300px;
+    margin: 2rem auto;
+    position: relative;
+    z-index: 1;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #ff66cc, 0 0 20px #ff99ff, 0 0 30px #ff66cc;
   }
-
-  .selfieImg,
-  .border {
+  
+  .selfieImg {
     width: 100%;
     height: auto;
+    display: block;
+   
     position: relative;
+    z-index: 2;
   }
-
+  
   .border {
     position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 2px dashed #ff99ff;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #ff66cc, 0 0 30px #ff99ff;
+    pointer-events: none;
+    z-index: 3;
   }
+  
+  .selfie::after {
+    content: "✨✨✨";
+    position: absolute;
+    bottom: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+    color: #ffccff;
+    animation: sparkle 2s infinite ease-in-out;
+    pointer-events: none;
+    z-index: 4;
+  }
+  
+  @keyframes sparkle {
+    0%   { opacity: 0.2; transform: translateX(-50%) scale(1); }
+    50%  { opacity: 1; transform: translateX(-50%) scale(1.2); }
+    100% { opacity: 0.2; transform: translateX(-50%) scale(1); }
+  }
+  
 
   .musicPlayer {
     flex-direction: column;

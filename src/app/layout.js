@@ -14,15 +14,15 @@ const pixelifySans = localFont({
 export const metadata = {
   title: "xbrainstewx",
   description: "welcome to my page <3",
+  icons: {
+    icon: "/devil.gif", 
+  },
 };
 
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/devil.gif" type="image/gif" />
-      </head>
       <body className={`${pixelifySans.variable}`}>
         <Header />
         <MusicPlayer />
