@@ -15,7 +15,7 @@ export const metadata = {
   title: "xbrainstewx",
   description: "welcome to my page <3",
   icons: {
-    icon: "/devil.gif", 
+    icon: "/public/devil.gif", 
   },
 };
 
