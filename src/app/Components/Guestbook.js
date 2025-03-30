@@ -2,9 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { db } from '../../../firebase';
-import { storage } from '../../../firebase';
 import { collection, addDoc, onSnapshot, serverTimestamp, query, orderBy } from 'firebase/firestore';
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 export default function Guestbook() {
   const [entries, setEntries] = useState([]);
@@ -12,7 +10,7 @@ export default function Guestbook() {
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-    const q = query(collection(db, 'guestbook'), orderBy('timestamp', 'desc'));
+    const q = query(collection(db, 'comments'), orderBy('timestamp', 'desc'));
     const unsubscribe = onSnapshot(q, (snapshot) => {
       setEntries(snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
     });
@@ -23,7 +21,7 @@ export default function Guestbook() {
     e.preventDefault();
     if (!name || !message) return;
 
-    await addDoc(collection(db, 'guestbook'), {
+    await addDoc(collection(db, 'comments'), {
       name,
       message,
       timestamp: serverTimestamp(),
@@ -47,7 +45,7 @@ export default function Guestbook() {
         />
         <textarea
           className="guestTextarea"
-          placeholder="leave a glittery message ✶"
+          placeholder="leave a message ✶"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
         />
@@ -58,7 +56,10 @@ export default function Guestbook() {
         {entries.map((entry) => (
           <div key={entry.id} className="guestEntry">
             <p className="guestName">✶ {entry.name} ✶</p>
-            <p className="guestMessage">{entry.message}</p>
+            <p className="guestMessage">{entry.text}</p>
+            <p className="guestTimestamp">
+              {entry.timestamp?.toDate().toLocaleString()}
+            </p>
           </div>
         ))}
       </div>
