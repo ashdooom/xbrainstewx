@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/public/kittyfavi.png" sizes="any" />
+        <link rel="icon" href="/devil.gif" type="image/gif" />
       </head>
       <body className={`${pixelifySans.variable}`}>
         <Header />
