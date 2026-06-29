@@ -1,66 +1,126 @@
-import Image from "next/image";
+import AboutModal from "./Components/AboutModal";
+import CommentsBox from "./Components/Comments";
 import styles from "./page.module.css";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <div className={styles.page}>
-      <main className={styles.main}>
+      {/* SCANLINES */}
+      <div className={styles.noise} />
+
+      {/* TICKER */}
+      <div className={styles.ticker}>
+        <div className={styles.tickerTrack}>
+          {[...Array(4)].map((_, i) => (
+            <span key={i} className={styles.tickerText}>
+               &nbsp;·&nbsp; CREATIVE WEB DEVELOPER ✦ &nbsp;·&nbsp; ✦
+              DIGITAL ARTIST ✦ &nbsp;·&nbsp; DESIGNER &nbsp;·&nbsp; ✦
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* BRAIN HEADER */}
+      <div className={styles.headerBrain}>
         <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
+          src="/brainZ.png"
+          alt="xbrainwavex"
+          width={630}
+          height={210}
+          className={styles.brainImage}
           priority
         />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.js file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+      </div>
+
+      {/* MAIN 2-COL */}
+      <main className={styles.main}>
+
+        {/* LEFT — photo card */}
+        <section className={styles.heroCard}>
+          <div className={styles.heroOverlay} />
+
+          {/* STATUS BADGE */}
+          <div className={styles.statusBadge}>
+            <span className={styles.statusDot} />
+            ONLINE
+          </div>
+
+          {/* SELFIE */}
+          <div className={styles.selfieWrapper}>
             <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              src="/selfie2.PNG"
+              alt="ashley"
+              width={480}
+              height={600}
+              className={styles.brainSelfie}
             />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
+
+          {/* BOTTOM META */}
+          <div className={styles.heroMeta}>
+            <span>EST. 2022</span>
+            <span className={styles.metaDot}>·</span>
+            <span>LOS ANGELES, CA</span>
+            <span className={styles.metaDot}>·</span>
+            <span>v2.0</span>
+          </div>
+        </section>
+
+        {/* RIGHT — info column */}
+        <div className={styles.infoColumn}>
+
+          {/* EYEBROW */}
+          <p className={styles.kicker}>
+            creative developer &nbsp;✦&nbsp; designer &nbsp;✦&nbsp; artist
+          </p>
+
+          {/* NAME */}
+          <h1 className={styles.title}>
+            ashley<span className={styles.dot}>_</span>
+          </h1>
+
+          {/* BIO */}
+          <p className={styles.description}>
+            molecular and cell biology student. 29. mom + wife. code monkey and artist. email me at <a 
+            className={styles.brainEmail}
+            href="mailto:ashley@xbrainstewx.com">
+              ashley@xbrainstewx.com
+              </a> if you're interested in artwork, website design or consulation 🐇
+          </p>
+
+          {/* NAV GRID — 2×2 */}
+          <nav className={styles.navGrid}>
+            <div className={styles.smallCard}>
+              <span className={styles.cardEyebrow}>[ 01 ]</span>
+              <span>artwork</span>
+            </div>
+            <div className={styles.smallCard}>
+              <span className={styles.cardEyebrow}>[ 02 ]</span>
+              <span>music</span>
+            </div>
+            <div className={styles.smallCard}>
+              <span className={styles.cardEyebrow}>[ 03 ]</span>
+              <span>websites</span>
+            </div>
+            <div className={styles.smallCard}>
+              <span className={styles.cardEyebrow}>[ 04 ]</span>
+              <span>contact</span>
+            </div>
+          </nav>
+
+          {/* ABOUT */}
+          <div className={styles.aboutModal}>
+            <AboutModal />
+          </div>
+
         </div>
       </main>
+
+      {/* COMMENTS */}
+      <div className={styles.commentBox}>
+        <CommentsBox />
+      </div>
     </div>
   );
 }
