@@ -1,6 +1,7 @@
 import AboutModal from "./Components/AboutModal";
 import CommentsBox from "./Components/Comments";
 import styles from "./page.module.css";
+import MusicPlayer from "./Components/MusicPlayer";
 import Image from "next/image";
 
 export default function Home() {
@@ -14,13 +15,13 @@ export default function Home() {
         <div className={styles.tickerTrack}>
           {[...Array(4)].map((_, i) => (
             <span key={i} className={styles.tickerText}>
-               &nbsp;·&nbsp; CREATIVE WEB DEVELOPER ✦ &nbsp;·&nbsp; ✦
-              DIGITAL ARTIST ✦ &nbsp;·&nbsp; DESIGNER &nbsp;·&nbsp; ✦
+              &nbsp;·&nbsp; CREATIVE WEB DEVELOPER ✦ &nbsp;·&nbsp; ✦ DIGITAL
+              ARTIST ✦ &nbsp;·&nbsp; DESIGNER &nbsp;·&nbsp; ✦
             </span>
           ))}
         </div>
       </div>
-
+      <MusicPlayer />
       {/* BRAIN HEADER */}
       <div className={styles.headerBrain}>
         <Image
@@ -35,7 +36,6 @@ export default function Home() {
 
       {/* MAIN 2-COL */}
       <main className={styles.main}>
-
         {/* LEFT — photo card */}
         <section className={styles.heroCard}>
           <div className={styles.heroOverlay} />
@@ -69,7 +69,6 @@ export default function Home() {
 
         {/* RIGHT — info column */}
         <div className={styles.infoColumn}>
-
           {/* EYEBROW */}
           <p className={styles.kicker}>
             creative developer &nbsp;✦&nbsp; designer &nbsp;✦&nbsp; artist
@@ -82,11 +81,15 @@ export default function Home() {
 
           {/* BIO */}
           <p className={styles.description}>
-            molecular and cell biology student. 29. mom + wife. code monkey and artist. email me at <a 
-            className={styles.brainEmail}
-            href="mailto:ashley@xbrainstewx.com">
+            molecular and cell biology student. 29. mom + wife. code monkey and
+            artist. email me at{" "}
+            <a
+              className={styles.brainEmail}
+              href="mailto:ashley@xbrainstewx.com"
+            >
               ashley@xbrainstewx.com
-              </a> if you're interested in artwork, website design or consulation 🐇
+            </a>{" "}
+            if you're interested in artwork, website design or consulation 🐇
           </p>
 
           {/* NAV GRID — 2×2 */}
@@ -113,7 +116,6 @@ export default function Home() {
           <div className={styles.aboutModal}>
             <AboutModal />
           </div>
-
         </div>
       </main>
 

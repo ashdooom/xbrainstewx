@@ -153,6 +153,46 @@ a {
   color: #f8d6f5;
 }
 
+/* =========================================================
+   SCROLLBARS — xbrainwavex Y2K
+========================================================= */
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #ff0099 #000000;
+}
+
+/* Webkit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+  border-left: 1px solid rgba(255, 0, 153, 0.25);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff0099;
+  border: 1px solid #000000;
+  box-shadow:
+    0 0 8px rgba(255, 0, 153, 0.6),
+    0 0 16px rgba(255, 0, 153, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00ff66;
+  box-shadow:
+    0 0 10px rgba(0, 255, 102, 0.7),
+    0 0 22px rgba(0, 255, 102, 0.35);
+}
+
+::-webkit-scrollbar-corner {
+  background: #000000;
+}
+
 @keyframes sparkleFade {
   0% {
     opacity: 1;

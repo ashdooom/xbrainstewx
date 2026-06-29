@@ -1,0 +1,191 @@
+.player {
+  width: 100%;
+  background: #000000;
+  border-bottom: 1px solid #ff0099;
+  box-shadow: 0 0 14px rgba(255, 0, 153, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 6px 18px;
+  position: relative;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+/* now playing */
+.nowPlaying {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 140px;
+}
+
+.eyebrow {
+  font-size: 0.48rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: #00ff66;
+  text-shadow: 0 0 6px rgba(0, 255, 102, 0.5);
+  text-transform: uppercase;
+}
+
+.trackTitle {
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(255, 0, 153, 0.45);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 160px;
+}
+
+/* controls */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.btn {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  transition: opacity 0.15s;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.btn img {
+  width: 13px;
+  height: 13px;
+  filter: invert(1);
+}
+
+.playBtn img {
+  width: 16px;
+  height: 16px;
+  filter: drop-shadow(0 0 4px #ff0099);
+}
+
+.playBtn {
+  opacity: 1;
+}
+
+/* progress */
+.progressWrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.progressBar {
+  flex: 1;
+  height: 3px;
+  background: rgba(255, 0, 153, 0.18);
+  cursor: pointer;
+  position: relative;
+}
+
+.progressFill {
+  height: 100%;
+  background: #ff0099;
+  box-shadow: 0 0 6px rgba(255, 0, 153, 0.6);
+  pointer-events: none;
+  transition: width 0.1s linear;
+}
+
+.times {
+  font-size: 0.52rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #444444;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* tracklist dropdown */
+.tracklistToggle {
+  background: none;
+  border: 1px solid rgba(255, 0, 153, 0.35);
+  color: #ff0099;
+  font-size: 0.52rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.tracklistToggle:hover {
+  border-color: #00ff66;
+  color: #00ff66;
+}
+
+.tracklist {
+  position: absolute;
+  top: 100%;
+  right: 18px;
+  background: #000000;
+  border: 1px solid #ff0099;
+  border-top: none;
+  box-shadow: 0 8px 24px rgba(255, 0, 153, 0.2);
+  z-index: 100;
+  min-width: 220px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #666666;
+  border-bottom: 1px solid rgba(255, 0, 153, 0.08);
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s;
+}
+
+.track:last-child {
+  border-bottom: none;
+}
+
+.track:hover {
+  color: #ffffff;
+  background: rgba(255, 0, 153, 0.06);
+}
+
+.active {
+  color: #ff0099;
+  text-shadow: 0 0 6px rgba(255, 0, 153, 0.5);
+}
+
+.trackNum {
+  font-size: 0.5rem;
+  color: #333333;
+  min-width: 18px;
+}
+
+.active .trackNum {
+  color: #00ff66;
+}
