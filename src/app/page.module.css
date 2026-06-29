@@ -385,6 +385,8 @@
 
 .commentBox {
   position: relative;
+  height: 60vh;
+  overflow: scroll;
   z-index: 2;
   width: min(1300px, 94%);
   margin: 0 auto;
