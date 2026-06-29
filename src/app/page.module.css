@@ -373,6 +373,11 @@
   text-shadow: 0 0 8px rgba(0, 255, 102, 0.55);
 }
 
+.cardButton {
+  background: none;
+  border: none;
+}
+
 /* ABOUT MODAL */
 .aboutModal {
   display: flex;

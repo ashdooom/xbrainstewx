@@ -1,8 +1,12 @@
+"use client";
+
 import AboutModal from "./Components/AboutModal";
+import { useState } from "react";
 import CommentsBox from "./Components/Comments";
 import styles from "./page.module.css";
 import MusicPlayer from "./Components/MusicPlayer";
 import Image from "next/image";
+import ContactModal from "./Components/ContactModal";
 
 export default function Home() {
   return (
@@ -81,8 +85,8 @@ export default function Home() {
 
           {/* BIO */}
           <p className={styles.description}>
-            molecular and cell biology student. 29. mom + wife. code monkey and
-            artist. email me at{" "}
+            molecular and cell biology student. 29. code monkey and artist.
+            email me at{" "}
             <a
               className={styles.brainEmail}
               href="mailto:ashley@xbrainstewx.com"
@@ -108,7 +112,7 @@ export default function Home() {
             </div>
             <div className={styles.smallCard}>
               <span className={styles.cardEyebrow}>[ 04 ]</span>
-              <span>contact</span>
+              <ContactModal />
             </div>
           </nav>
 
