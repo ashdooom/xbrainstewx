@@ -1,10 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import styles from "../modals.module.css";
 
 export default function AboutModal() {
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -15,11 +21,11 @@ export default function AboutModal() {
 
   return (
     <>
-      <button className={styles.aboutButton} onClick={() => setOpen(true)}>
-        about me ✦
+      <button className={styles.cardTrigger} onClick={() => setOpen(true)}>
+        about me
       </button>
 
-      {open && (
+      {open && mounted && createPortal(
         <div className={styles.overlay} onClick={() => setOpen(false)}>
           <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
             <button className={styles.close} onClick={() => setOpen(false)}>
@@ -68,7 +74,8 @@ export default function AboutModal() {
               </div>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );

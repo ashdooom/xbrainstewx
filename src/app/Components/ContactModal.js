@@ -41,7 +41,7 @@ export default function ContactModal() {
   return (
     <>
       <button className={styles.cardTrigger} onClick={() => setOpen(true)}>
-        contact me
+        contact
       </button>
       {open &&
         createPortal(

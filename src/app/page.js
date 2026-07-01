@@ -1,12 +1,18 @@
 "use client";
 
 import AboutModal from "./Components/AboutModal";
+import ArtModal from "./Components/ArtModal";
 import { useState } from "react";
 import CommentsBox from "./Components/Comments";
 import styles from "./page.module.css";
 import MusicPlayer from "./Components/MusicPlayer";
 import Image from "next/image";
 import ContactModal from "./Components/ContactModal";
+
+const artworkImages = Array.from({ length: 12 }, (_, i) => ({
+  src: `/art/${String(i + 1).padStart(2, "0")}.png`,
+  alt: i === 0 ? "xbrainstewx logo" : `artwork ${i}`,
+}));
 
 export default function Home() {
   return (
@@ -100,11 +106,15 @@ export default function Home() {
           <nav className={styles.navGrid}>
             <div className={styles.smallCard}>
               <span className={styles.cardEyebrow}>[ 01 ]</span>
-              <span>artwork</span>
+              <ArtModal
+                label="artwork"
+                title="artwork.exe"
+                images={artworkImages}
+              />
             </div>
             <div className={styles.smallCard}>
               <span className={styles.cardEyebrow}>[ 02 ]</span>
-              <span>music</span>
+              <AboutModal />
             </div>
             <div className={styles.smallCard}>
               <span className={styles.cardEyebrow}>[ 03 ]</span>
@@ -115,11 +125,6 @@ export default function Home() {
               <ContactModal />
             </div>
           </nav>
-
-          {/* ABOUT */}
-          <div className={styles.aboutModal}>
-            <AboutModal />
-          </div>
         </div>
       </main>
 
