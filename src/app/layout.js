@@ -15,7 +15,7 @@ export const metadata = {
   title: "xbrainstewx",
   description: "xbrainstewx's portfolio website",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/src/app/favicon.ico",
   },
 };
 
