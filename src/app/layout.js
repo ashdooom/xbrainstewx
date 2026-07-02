@@ -14,6 +14,19 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "xbrainstewx",
   description: "xbrainstewx's portfolio website",
+  openGraph: {
+    title: "xbrainstewx",
+    description: "xbrainstewx's portfolio website",
+    url: "https://xbrainstewx.com",
+    siteName: "xbrainstewx",
+    images: [
+      {
+        url: "/brainZ.png", 
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
 };
 
 export default function RootLayout({ children }) {
