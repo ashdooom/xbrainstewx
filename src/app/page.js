@@ -31,17 +31,40 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <MusicPlayer />
+
       {/* BRAIN HEADER */}
       <div className={styles.headerBrain}>
         <Image
+          src="/dragon.gif"
+          alt="pink dragon floating"
+          width={300}
+          height={250}
+          className={styles.pinkDragonL}
+          priority
+        />
+
+        <Image
           src="/brainZ.png"
           alt="xbrainwavex"
-          width={630}
-          height={210}
+          width={670}
+          height={180}
           className={styles.brainImage}
           priority
         />
+
+        <Image
+          src="/dragon.gif"
+          alt="pink dragon floating"
+          width={300}
+          height={250}
+          className={styles.pinkDragonR}
+          priority
+        />
+      </div>
+
+      {/* MUSIC PLAYER — sits directly above the main column, matched to its width */}
+      <div className={styles.playerBarWrap}>
+        <MusicPlayer />
       </div>
 
       {/* MAIN 2-COL */}
