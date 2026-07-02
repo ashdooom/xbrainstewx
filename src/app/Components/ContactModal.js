@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { createPortal } from "react-dom";
 import styles from "../modals.module.css";
+import { useForm, ValidationError } from "@formspree/react";
 
 export default function ContactModal() {
   const [open, setOpen] = useState(false);
@@ -11,6 +12,7 @@ export default function ContactModal() {
     subject: "",
     message: "",
   });
+  const [formState, handleFormspreeSubmit] = useForm("mjgqadko");
   const [status, setStatus] = useState(null);
 
   const handleChange = (e) =>
@@ -19,7 +21,7 @@ export default function ContactModal() {
   const handleSubmit = async () => {
     setStatus("sending");
     try {
-      const res = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+      const res = await fetch("https://formspree.io/f/mjgqadko", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -106,7 +108,7 @@ export default function ContactModal() {
                 </div>
 
                 {/* FORM */}
-                {status === "sent" ? (
+                {formState.succeeded ? (
                   <div
                     style={{
                       marginTop: "24px",
@@ -125,7 +127,8 @@ export default function ContactModal() {
                     ✦ MESSAGE SENT. I'LL BE IN TOUCH SOON.
                   </div>
                 ) : (
-                  <div
+                  <form
+                    onSubmit={handleFormspreeSubmit}
                     style={{
                       marginTop: "24px",
                       display: "flex",
@@ -164,6 +167,7 @@ export default function ContactModal() {
                           }}
                         >
                           <label
+                            htmlFor={name}
                             style={{
                               fontSize: "0.52rem",
                               fontWeight: 700,
@@ -175,13 +179,24 @@ export default function ContactModal() {
                             {label}
                           </label>
                           <input
+                            id={name}
                             type={type}
                             name={name}
-                            value={form[name]}
-                            onChange={handleChange}
                             placeholder={placeholder}
                             style={inputStyle}
                           />
+                          {name === "email" && (
+                            <ValidationError
+                              prefix="Email"
+                              field="email"
+                              errors={formState.errors}
+                              style={{
+                                color: "#ff0099",
+                                fontSize: "0.65rem",
+                                margin: 0,
+                              }}
+                            />
+                          )}
                         </div>
                       ))}
                     </div>
@@ -195,6 +210,7 @@ export default function ContactModal() {
                       }}
                     >
                       <label
+                        htmlFor="subject"
                         style={{
                           fontSize: "0.52rem",
                           fontWeight: 700,
@@ -206,10 +222,9 @@ export default function ContactModal() {
                         SUBJECT
                       </label>
                       <input
+                        id="subject"
                         type="text"
                         name="subject"
-                        value={form.subject}
-                        onChange={handleChange}
                         placeholder="web design / art commission / other"
                         style={inputStyle}
                       />
@@ -224,6 +239,7 @@ export default function ContactModal() {
                       }}
                     >
                       <label
+                        htmlFor="message"
                         style={{
                           fontSize: "0.52rem",
                           fontWeight: 700,
@@ -235,9 +251,8 @@ export default function ContactModal() {
                         MESSAGE
                       </label>
                       <textarea
+                        id="message"
                         name="message"
-                        value={form.message}
-                        onChange={handleChange}
                         placeholder="tell me about your project..."
                         rows={5}
                         style={{
@@ -247,31 +262,27 @@ export default function ContactModal() {
                           lineHeight: 1.6,
                         }}
                       />
+                      <ValidationError
+                        prefix="Message"
+                        field="message"
+                        errors={formState.errors}
+                        style={{
+                          color: "#ff0099",
+                          fontSize: "0.65rem",
+                          margin: 0,
+                        }}
+                      />
                     </div>
 
-                    {status === "error" && (
-                      <p
-                        style={{
-                          margin: 0,
-                          fontSize: "0.72rem",
-                          color: "#ff0099",
-                          letterSpacing: "0.12em",
-                        }}
-                      >
-                        ✕ something went wrong — email directly at
-                        ashley@xbrainstewx.com
-                      </p>
-                    )}
-
                     <button
-                      onClick={handleSubmit}
-                      disabled={status === "sending"}
+                      type="submit"
+                      disabled={formState.submitting}
                       className={styles.aboutButton}
                       style={{ marginTop: "4px", alignSelf: "flex-start" }}
                     >
-                      {status === "sending" ? "SENDING_" : "SEND MESSAGE ✦"}
+                      {formState.submitting ? "SENDING_" : "SEND MESSAGE ✦"}
                     </button>
-                  </div>
+                  </form>
                 )}
 
                 {/* FOOTER TAGS */}
